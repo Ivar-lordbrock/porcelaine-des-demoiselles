@@ -15,6 +15,7 @@ porcelaine-des-demoiselles/
 │   ├── sections.css        le style de chaque partie (accueil, atelier, rendez-vous…)
 │   └── galerie.css         la grille de photos et la visionneuse
 ├── js/
+│   ├── menu.js             le bouton « Menu » sur téléphone (rien à y toucher)
 │   └── galerie.js          agrandit une photo au clic (rien à y toucher)
 ├── fonts/                  les deux polices, hébergées sur le site
 ├── images/

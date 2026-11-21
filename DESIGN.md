@@ -149,6 +149,7 @@ Aucune ombre. La profondeur vient uniquement des aplats de couleur (l’eau plus
 
 ### Navigation
 - Liens de menu de 44 px de haut au minimum, soulignés seulement au survol.
+- Sous 48 rem (téléphone) : les liens se rangent derrière un bouton « Menu » (trois traits + le mot, filet 2 px). Ouvert, les traits deviennent une croix et les liens s’empilent sous l’en-tête, 52 px chacun, séparés par des lignes de sonde. Un lien choisi referme le menu ; Échap aussi. Sans JavaScript, les liens restent affichés (`js/menu.js`, classe `js` posée dans le `<head>`).
 - Liens dans le texte : soulignés en lavande, **double soulignement** au survol.
 - Focus clavier : contour lavande de 3 px, toujours visible.
 

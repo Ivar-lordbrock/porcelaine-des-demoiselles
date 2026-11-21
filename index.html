@@ -11,6 +11,9 @@
   <link rel="preload" href="./fonts/alegreya.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./fonts/atkinson-hyperlegible-next.woff2" as="font" type="font/woff2" crossorigin>
 
+  <!-- Signale que JavaScript marche : le menu se replie alors derrière le bouton « Menu » sur téléphone -->
+  <script>document.documentElement.classList.add("js");</script>
+
   <!-- Feuilles de style, dans cet ordre -->
   <link rel="stylesheet" href="./css/base.css">
   <link rel="stylesheet" href="./css/layout.css">
@@ -33,7 +36,12 @@
         </svg>
         <span>Porcelaine des Demoiselles</span>
       </a>
-      <nav class="navigation" aria-label="Navigation principale">
+      <!-- Bouton « Menu », visible seulement sur téléphone (géré par js/menu.js) -->
+      <button class="menu-bouton" type="button" aria-expanded="false" aria-controls="navigation-principale">
+        <span class="menu-bouton__icone" aria-hidden="true"></span>
+        Menu
+      </button>
+      <nav class="navigation" id="navigation-principale" aria-label="Navigation principale">
         <ul>
           <li><a href="#atelier">L’atelier</a></li>
           <li><a href="#rejoindre">Nous rejoindre</a></li>
@@ -419,6 +427,7 @@
     </div>
   </dialog>
 
+  <script src="./js/menu.js" defer></script>
   <script src="./js/galerie.js" defer></script>
 </body>
 </html>

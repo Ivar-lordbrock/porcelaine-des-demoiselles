@@ -67,6 +67,131 @@
   text-decoration-color: var(--lavande);
 }
 
+/* Une partie atteinte depuis le menu reçoit le focus, sans cadre autour */
+section[tabindex="-1"]:focus {
+  outline: none;
+}
+
+/* ---------- Bouton « Menu » (téléphone seulement) ---------- */
+.menu-bouton {
+  display: none;              /* caché sur grand écran et sans JavaScript */
+  align-items: center;
+  gap: 0.7rem;
+  flex: none;
+  min-height: 3rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--encre);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--encre);
+  font: inherit;
+  font-size: var(--texte-petit);
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  outline: 1px solid transparent;
+  outline-offset: 3px;
+  transition: outline-color 180ms ease-out;
+}
+
+/* Survol : un second filet fin, comme les autres boutons */
+.menu-bouton:hover {
+  outline-color: var(--encre);
+}
+
+.menu-bouton:focus-visible {
+  outline: 3px solid var(--lavande);
+  outline-offset: 3px;
+}
+
+/* Les trois traits, qui deviennent une croix quand le menu est ouvert */
+.menu-bouton__icone,
+.menu-bouton__icone::before,
+.menu-bouton__icone::after {
+  display: block;
+  width: 1.25rem;
+  height: 2px;
+  background: currentColor;
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), background-color 120ms ease-out;
+}
+
+.menu-bouton__icone {
+  position: relative;
+}
+
+.menu-bouton__icone::before,
+.menu-bouton__icone::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.menu-bouton__icone::before { top: -6px; }
+.menu-bouton__icone::after  { top: 6px; }
+
+.menu-bouton[aria-expanded="true"] .menu-bouton__icone {
+  background-color: transparent;
+}
+
+.menu-bouton[aria-expanded="true"] .menu-bouton__icone::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-bouton[aria-expanded="true"] .menu-bouton__icone::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Sur téléphone : les liens se rangent derrière le bouton */
+@media (max-width: 47.99rem) {
+  .js .menu-bouton {
+    display: inline-flex;
+  }
+
+  /* Le nom passe sur deux lignes si besoin, le bouton reste à droite */
+  .js .entete__interieur {
+    column-gap: var(--espace-2);
+  }
+
+  .js .marque {
+    flex: 1 1 0;
+    min-width: 0;
+    gap: 0.6rem;
+    font-size: 1.25rem;
+    text-wrap: balance;
+  }
+
+  .js .menu-bouton {
+    padding-inline: 0.85rem;
+    gap: 0.6rem;
+  }
+
+  .js .navigation {
+    display: none;
+    flex-basis: 100%;
+  }
+
+  .js .entete.est-ouvert .navigation {
+    display: block;
+  }
+
+  /* Liste ouverte : une ligne par lien, séparées par des pointillés */
+  .js .navigation ul {
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px dotted var(--obione);
+  }
+
+  .js .navigation li {
+    border-bottom: 1px dotted var(--obione);
+  }
+
+  .js .navigation a {
+    display: flex;
+    min-height: 3.25rem;
+    font-size: var(--texte);
+  }
+}
+
 /* ---------- Bandes (sections) ---------- */
 .bande {
   padding-block: var(--espace-section);
