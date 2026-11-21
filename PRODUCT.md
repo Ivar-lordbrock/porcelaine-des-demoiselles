@@ -22,7 +22,7 @@ Présenter l'atelier « Porcelaine des Demoiselles », montrer les pièces peint
 
 ## Positioning
 
-Un atelier créatif associatif de Port-des-Barques (Charente-Maritime), composé d'une dizaine de « copines créatrices en herbe » et de leur animatrice. Elles peignent sur porcelaine (assiettes, plateaux, tasses, boîtes, abat-jour) et exposent leurs pièces lors d'expositions-ventes à la salle des fêtes de la commune. La peinture sur porcelaine y est présentée comme « à la portée de tous ».
+Un atelier créatif associatif de Port-des-Barques (Charente-Maritime), composé d'une dizaine de « copines créatrices en herbe » qui apprennent ensemble, entre elles, sans encadrement : ne présenter aucune personne comme enseignante ou responsable des cours *(précision de la propriétaire, 21 novembre 2026)*. Elles peignent sur porcelaine (assiettes, plateaux, tasses, boîtes, abat-jour) et exposent leurs pièces lors d'expositions-ventes à la salle des fêtes de la commune. La peinture sur porcelaine y est présentée comme « à la portée de tous ».
 
 ## Operating Context
 
@@ -45,7 +45,7 @@ Un atelier créatif associatif de Port-des-Barques (Charente-Maritime), composé
 ## Evidence on Hand
 
 - 17 photos d'œuvres issues du groupe Facebook public (aucun visage) : `images/galerie/`.
-- Texte de présentation publié par le groupe (atelier de Port-des-Barques, une dizaine de copines et leur animatrice, expositions toute l'année).
+- Texte de présentation publié par le groupe (atelier de Port-des-Barques, une dizaine de copines, expositions toute l'année).
 - **Absents, à ne pas inventer** : logo, e-mail, téléphone, adresse et jour des séances, cotisation, noms des membres, témoignages, photos de groupe.
 
 ## Product Principles

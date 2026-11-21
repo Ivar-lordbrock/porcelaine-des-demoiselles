@@ -158,7 +158,6 @@ Le fichier vide `.nojekyll` indique à GitHub de publier les fichiers tels quels
 Ces passages ont été rédigés d’après le groupe Facebook ; à vérifier ou ajuster :
 
 - les trois étapes de « Nous rejoindre » (Prenez contact / Venez nous rencontrer / Lancez-vous), notamment « Passez voir l’atelier » : est-ce possible de venir à une séance ?
-- « avec les conseils de l’animatrice et des autres » (partie L’atelier) ;
 - l’exposition des **21 et 22 novembre** : l’année **2026** a été déduite de la date de publication sur Facebook ;
 - les légendes et descriptions des photos de la galerie.
 
