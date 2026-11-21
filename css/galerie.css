@@ -1,0 +1,141 @@
+/* =========================================================
+   galerie.css — grille de photos et visionneuse (photo agrandie)
+   ========================================================= */
+
+.galerie-section__intro {
+  margin-bottom: var(--espace-5);
+}
+
+/* Colonnes « en mur » : chaque photo garde ses proportions, rien n'est rogné */
+/* 2 colonnes sur téléphone, 3 sur tablette, 4 sur grand écran */
+.galerie {
+  columns: 2;
+  column-gap: var(--espace-2);
+}
+
+.galerie__item {
+  break-inside: avoid;
+  margin-bottom: var(--espace-3);
+}
+
+@media (min-width: 48rem) {
+  .galerie {
+    columns: 3;
+    column-gap: var(--espace-4);
+  }
+
+  .galerie__item {
+    margin-bottom: var(--espace-4);
+  }
+}
+
+@media (min-width: 72rem) {
+  .galerie {
+    columns: 4;
+  }
+}
+
+/* Chaque photo dans un petit cartouche à double filet */
+.galerie__lien {
+  display: block;
+  margin: 5px;
+  padding: clamp(0.3rem, 1vw, 0.5rem);
+  background: var(--blanc);
+  border: 2px solid var(--encre);
+  outline: 1px solid var(--encre);
+  outline-offset: 4px;
+  cursor: zoom-in;
+  transition: outline-offset 200ms cubic-bezier(0.16, 1, 0.3, 1), outline-color 200ms ease-out;
+}
+
+/* Survol : le filet fin s'écarte et prend la couleur lavande */
+.galerie__lien:hover {
+  outline-color: var(--lavande);
+  outline-offset: 6px;
+}
+
+/* Clavier : le filet fin devient épais */
+.galerie__lien:focus-visible {
+  outline: 3px solid var(--lavande);
+  outline-offset: 5px;
+  border-radius: 0;
+}
+
+.galerie__item figcaption {
+  padding-inline: 5px;
+}
+
+/* ---------- Visionneuse ---------- */
+.visionneuse {
+  width: min(100% - 2rem, 64rem);
+  max-height: calc(100dvh - 2rem);
+  padding: 0;
+  border: 3px solid var(--encre);
+  outline: 1px solid var(--fond);
+  outline-offset: 5px;
+  background: var(--fond);
+  color: var(--encre);
+}
+
+.visionneuse::backdrop {
+  background: rgb(21 48 61 / 0.86);
+}
+
+.visionneuse__interieur {
+  display: grid;
+  gap: var(--espace-3);
+  padding: clamp(0.75rem, 2.5vw, 1.5rem);
+}
+
+.visionneuse__image {
+  width: auto;
+  max-width: 100%;
+  max-height: calc(100dvh - 15rem);
+  margin-inline: auto;
+  background: var(--blanc);
+}
+
+.visionneuse figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--espace-1) var(--espace-3);
+  font-size: var(--texte);
+  color: var(--encre);
+}
+
+.visionneuse__compteur {
+  color: var(--encre-douce);
+  font-variant-numeric: tabular-nums;
+}
+
+.visionneuse__commandes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--espace-2);
+}
+
+.visionneuse__commandes .bouton {
+  flex: 1 1 8.5rem;
+  max-width: 13rem;
+}
+
+/* Ouverture douce (désactivée si l'on préfère moins d'animations) */
+.visionneuse[open] {
+  animation: visionneuse-ouvre 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.visionneuse[open]::backdrop {
+  animation: voile-ouvre 240ms ease-out;
+}
+
+@keyframes visionneuse-ouvre {
+  from { opacity: 0; transform: translateY(8px) scale(0.985); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes voile-ouvre {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

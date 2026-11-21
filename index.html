@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Porcelaine des Demoiselles · Atelier de peinture sur porcelaine à Port-des-Barques</title>
+  <meta name="description" content="Atelier associatif de peinture sur porcelaine à Port-des-Barques (Charente-Maritime). Une dizaine de copines et leur animatrice. Débutantes bienvenues : rejoignez-nous !">
+  <meta name="theme-color" content="#cfe1e4">
+
+  <!-- Polices hébergées sur le site (aucun appel extérieur) -->
+  <link rel="preload" href="./fonts/alegreya.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/atkinson-hyperlegible-next.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Feuilles de style, dans cet ordre -->
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/sections.css">
+  <link rel="stylesheet" href="./css/galerie.css">
+
+  <link rel="icon" href="./images/site/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+  <!-- ============ EN-TÊTE ============ -->
+  <header class="entete">
+    <div class="conteneur entete__interieur">
+      <a class="marque" href="./index.html">
+        <svg class="marque__signe" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <circle cx="32" cy="32" r="27" fill="none" stroke="currentColor" stroke-width="4"/>
+          <circle cx="32" cy="32" r="20.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <circle cx="32" cy="32" r="6" class="marque__point"/>
+        </svg>
+        <span>Porcelaine des Demoiselles</span>
+      </a>
+      <nav class="navigation" aria-label="Navigation principale">
+        <ul>
+          <li><a href="#atelier">L’atelier</a></li>
+          <li><a href="#rejoindre">Nous rejoindre</a></li>
+          <li><a href="#galerie">Nos pièces</a></li>
+          <li><a href="#rendez-vous">Rendez-vous</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <!-- ============ ACCUEIL ============ -->
+    <section class="accueil" aria-labelledby="titre-accueil">
+      <div class="conteneur accueil__grille">
+        <div class="accueil__texte">
+          <h1 id="titre-accueil">Porcelaine des Demoiselles</h1>
+          <p class="accueil__soustitre">Atelier de peinture sur porcelaine à Port-des-Barques</p>
+          <p class="accueil__intro">Une dizaine de copines et leur animatrice se retrouvent pour peindre assiettes, plateaux et tasses, chacune à son rythme.</p>
+          <p class="accueil__mention">Débutantes bienvenues&nbsp;: la peinture sur porcelaine est à la portée de toutes.</p>
+          <div class="actions">
+            <a class="bouton" href="#rejoindre">Nous rejoindre</a>
+            <a class="lien-fort" href="#galerie">Voir nos pièces</a>
+          </div>
+        </div>
+
+        <figure class="accueil__image cartouche">
+          <img src="./images/site/accueil-rouge-gorge.jpg" width="992" height="1400"
+               alt="Plateau rectangulaire peint d’un rouge-gorge au pied d’un arbuste aux fines branches rousses.">
+          <figcaption>Plateau au rouge-gorge, peint à l’atelier</figcaption>
+        </figure>
+      </div>
+
+      <!-- La ligne de côte : une seule courbe ferme le haut de page -->
+      <svg class="cote" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path class="cote__sonde" d="M0,46 C180,78 320,22 520,40 C720,58 860,90 1060,66 C1220,46 1340,18 1440,30"/>
+        <path class="cote__terre" d="M0,66 C180,98 320,42 520,60 C720,78 860,110 1060,86 C1220,66 1340,38 1440,50 L1440,120 L0,120 Z"/>
+      </svg>
+    </section>
+
+    <!-- ============ L'ATELIER ============ -->
+    <section class="bande atelier" id="atelier" aria-labelledby="titre-atelier">
+      <div class="conteneur atelier__grille">
+        <div class="atelier__texte">
+          <h2 id="titre-atelier">Un atelier entre copines</h2>
+          <p>La Porcelaine des Demoiselles est l’une des associations de Port-des-Barques, notre petite cité balnéaire de Charente-Maritime. Le groupe réunit une dizaine de «&nbsp;créatrices en herbe&nbsp;» et leur animatrice.</p>
+          <p>On y découvre la peinture sur porcelaine blanche&nbsp;: fleurs, oiseaux, personnages, paysages… Chacune choisit ses motifs et avance à son rythme, avec les conseils de l’animatrice et des autres.</p>
+          <p>Tout au long de l’année, nous montrons nos pièces lors d’expositions-ventes. Ce sont aussi de beaux moments de partage, entre nous et avec les visiteurs.</p>
+
+          <h3>Ce que nous peignons</h3>
+          <ul class="liste-sonde">
+            <li>Assiettes et plats</li>
+            <li>Plateaux</li>
+            <li>Tasses et soucoupes</li>
+            <li>Coupelles et petites boîtes</li>
+            <li>Abat-jour</li>
+          </ul>
+        </div>
+
+        <figure class="atelier__image cartouche">
+          <img src="./images/galerie/assiette-les-copines.jpg" width="1200" height="1138" loading="lazy"
+               alt="Assiette carrée peinte de trois jeunes femmes souriantes, avec l’inscription « Les copines ».">
+          <figcaption>«&nbsp;Les copines&nbsp;», une assiette qui nous ressemble</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ NOUS REJOINDRE ============ -->
+    <section class="bande bande--profonde rejoindre" id="rejoindre" aria-labelledby="titre-rejoindre">
+      <div class="conteneur">
+        <h2 id="titre-rejoindre">Nous accueillons de nouvelles adhérentes</h2>
+        <p class="rejoindre__intro">Vous aimez les couleurs, les jolies choses et les moments entre amies&nbsp;? Pas besoin de savoir dessiner&nbsp;: on apprend ensemble, pas à pas, dans la bonne humeur.</p>
+
+        <!-- Les trois étapes : textes à adapter si besoin -->
+        <ol class="etapes">
+          <li class="etape">
+            <h3>Prenez contact</h3>
+            <p>Écrivez-nous, appelez-nous ou laissez un message sur notre groupe Facebook.</p>
+          </li>
+          <li class="etape">
+            <h3>Venez nous rencontrer</h3>
+            <p>Passez voir l’atelier ou retrouvez-nous lors d’une exposition-vente pour découvrir nos pièces et poser vos questions.</p>
+          </li>
+          <li class="etape">
+            <h3>Lancez-vous</h3>
+            <p>Choisissez votre premier motif&nbsp;: l’animatrice vous guide pour vos premiers coups de pinceau.</p>
+          </li>
+        </ol>
+
+        <div class="actions">
+          <a class="bouton bouton--clair" href="#contact">Nous contacter</a>
+          <a class="lien-fort" href="https://www.facebook.com/groups/818583442289298" rel="noopener">Écrire sur notre groupe Facebook</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALERIE ============ -->
+    <!-- Pour ajouter une photo : copier un bloc <figure> ... </figure> (voir README.md) -->
+    <section class="bande galerie-section" id="galerie" aria-labelledby="titre-galerie">
+      <div class="conteneur">
+        <h2 id="titre-galerie">Nos pièces</h2>
+        <p class="galerie-section__intro">Quelques réalisations des membres, photographiées lors de nos expositions. Touchez ou cliquez sur une photo pour l’agrandir.</p>
+
+        <div class="galerie">
+          <figure class="galerie__item">
+            <a class="galerie__lien" href="./images/galerie/assiette-iris.jpg">
+              <img src="./images/galerie/assiette-iris.jpg" width="1050" height="1400" loading="lazy"
+                   alt="Assiette blanche peinte de grands iris bleus et verts.">
+            </a>
+            <figcaption>Assiette aux iris</figcaption>
+          </figure>
+
+          <figure class="galerie__item">
+            <a class="galerie__lien" href="./images/galerie/plateau-oasis-tasses.jpg">
+              <img src="./images/galerie/plateau-oasis-tasses.jpg" width="1400" height="776" loading="lazy"
+                   alt="Plateau à anses peint de chameaux et de palmiers, entouré de six tasses colorées.">
+            </a>
+            <figcaption>Plateau à l’oasis et ses tasses</figcaption>
+          </figure>
+
+          <figure class="galerie__item">
+            <a class="galerie__lien" href="./images/galerie/trio-assiettes-geishas.jpg">
+              <img src="./images/galerie/trio-assiettes-geishas.jpg" width="1050" height="1400" loading="lazy"
+                   alt="Trois assiettes peintes chacune d’une dame japonaise en kimono pastel.">
+            </a>
+            <figcaption>Trois assiettes, dames japonaises</figcaption>
+          </figure>
+
+          <figure class="galerie__item">
+            <a class="galerie__lien" href="./images/galerie/assiette-leopard.jpg">
+              <img src="./images/galerie/assiette-leopard.jpg" width="1050" height="1400" loading="lazy"
+                   alt="Assiette au bord noir peinte d’un léopard caché dans des feuillages tropicaux.">
+            </a>
+            <figcaption>Assiette, léopard dans les feuillages</figcaption>
+          </figure>
+
+          <figure class="galerie__item">
+            <a class="galerie__lien" href="./images/galerie/petites-pieces-dorees.jpg">
+              <img src="./images/galerie/petites-pieces-dorees.jpg" width="1080" height="810" loading="lazy"
+                   alt="Trois petites pièces rehaussées d’or : une coupelle en forme de fleur, une boîte ronde rose et un carreau aux renards.">
+            </a>
+            <figcaption>Petites pièces rehaussées d’or</figcaption>
+          </figure>
+
+          <figure class="galerie__item">
+            <a class="galerie__lien" href="./images/galerie/plateau-chats-etoiles.jpg">
+              <img src="./images/galerie/plateau-chats-etoiles.jpg" width="1050" height="1400" loading="lazy"
+                   alt="Plateau blanc peint de deux chats noirs sous un réverbère et un ciel étoilé.">
+            </a>
+            <figcaption>Plateau aux chats sous les étoiles</figcaption>
+          </figure>
+
+          <figure class="galerie__item">
+            <a class="galerie__lien" href="./images/galerie/plateau-oiseau-fantastique.jpg">
+              <img src="./images/galerie/plateau-oiseau-fantastique.jpg" width="672" height="1400" loading="lazy"
+                   alt="Plateau long peint d’un oiseau fantastique à la crête en éventail, sur un fond irisé.">
+            </a>
+            <figcaption>Plateau, oiseau fantastique</figcaption>
+          </figure>
+
+          <figure class="galerie__item">
+            <a class="galerie__lien" href="./images/galerie/tasse-herbes-folles.jpg">
+              <img src="./images/galerie/tasse-herbes-folles.jpg" width="1400" height="772" loading="lazy"
+                   alt="Tasse et soucoupe blanches peintes d’herbes folles.">
+            </a>
+            <figcaption>Tasse et soucoupe aux herbes folles</figcaption>
+          </figure>
+
+          <figure class="galerie__item">
+            <a class="galerie__lien" href="./images/galerie/assiette-dame-kimono.jpg">
+              <img src="./images/galerie/assiette-dame-kimono.jpg" width="1050" height="1400" loading="lazy"
+                   alt="Assiette au bord vert peinte d’une dame en kimono jaune.">
+            </a>
+            <figcaption>Assiette, dame en kimono</figcaption>
+          </figure>
+
+          <figure class="galerie__item">
+            <a class="galerie__lien" href="./images/galerie/abat-jour-papillons.jpg">
+              <img src="./images/galerie/abat-jour-papillons.jpg" width="720" height="960" loading="lazy"
+                   alt="Abat-jour en porcelaine peint de papillons orangés.">
+            </a>
+            <figcaption>Abat-jour aux papillons</figcaption>
+          </figure>
+
+          <figure class="galerie__item">
+            <a class="galerie__lien" href="./images/galerie/assiette-fleurs-rouges.jpg">
+              <img src="./images/galerie/assiette-fleurs-rouges.jpg" width="1400" height="984" loading="lazy"
+                   alt="Assiette peinte de grandes fleurs rouges, à côté d’une assiette turquoise décorée de chats.">
+            </a>
+            <figcaption>Assiette aux fleurs rouges</figcaption>
+          </figure>
+
+          <figure class="galerie__item">
+            <a class="galerie__lien" href="./images/galerie/assiettes-elegantes.jpg">
+              <img src="./images/galerie/assiettes-elegantes.jpg" width="1050" height="1400" loading="lazy"
+                   alt="Six assiettes blanches peintes de silhouettes de femmes élégantes vêtues de noir.">
+            </a>
+            <figcaption>Série d’assiettes, élégantes en noir</figcaption>
+          </figure>
+
+          <figure class="galerie__item">
+            <a class="galerie__lien" href="./images/galerie/plateau-rouge-gorge.jpg">
+              <img src="./images/galerie/plateau-rouge-gorge.jpg" width="1050" height="1400" loading="lazy"
+                   alt="Plateau rectangulaire peint d’un rouge-gorge au pied d’un arbuste aux fines branches rousses.">
+            </a>
+            <figcaption>Plateau au rouge-gorge</figcaption>
+          </figure>
+
+          <figure class="galerie__item">
+            <a class="galerie__lien" href="./images/galerie/plateau-long-geisha.jpg">
+              <img src="./images/galerie/plateau-long-geisha.jpg" width="672" height="1400" loading="lazy"
+                   alt="Plateau long et étroit peint d’une dame japonaise en kimono rose.">
+            </a>
+            <figcaption>Plateau long, dame japonaise</figcaption>
+          </figure>
+
+          <figure class="galerie__item">
+            <a class="galerie__lien" href="./images/galerie/assiette-damier-plateau-annees-folles.jpg">
+              <img src="./images/galerie/assiette-damier-plateau-annees-folles.jpg" width="1050" height="1400" loading="lazy"
+                   alt="Assiette en damier multicolore posée derrière un plateau peint de trois femmes à la mode des années folles.">
+            </a>
+            <figcaption>Assiette en damier et plateau «&nbsp;années folles&nbsp;»</figcaption>
+          </figure>
+
+          <figure class="galerie__item">
+            <a class="galerie__lien" href="./images/galerie/assiette-oiseau-eau.jpg">
+              <img src="./images/galerie/assiette-oiseau-eau.jpg" width="1050" height="1400" loading="lazy"
+                   alt="Assiette au bord vert peinte d’un oiseau d’eau.">
+            </a>
+            <figcaption>Assiette à l’oiseau d’eau</figcaption>
+          </figure>
+
+          <figure class="galerie__item">
+            <a class="galerie__lien" href="./images/galerie/assiette-les-copines.jpg">
+              <img src="./images/galerie/assiette-les-copines.jpg" width="1200" height="1138" loading="lazy"
+                   alt="Assiette carrée peinte de trois jeunes femmes souriantes, avec l’inscription « Les copines ».">
+            </a>
+            <figcaption>Assiette «&nbsp;Les copines&nbsp;»</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RENDEZ-VOUS ============ -->
+    <section class="bande bande--eau-claire rendez-vous" id="rendez-vous" aria-labelledby="titre-rendez-vous">
+      <div class="conteneur">
+        <h2 id="titre-rendez-vous">Nos rendez-vous</h2>
+        <p class="rendez-vous__intro">Au printemps et à l’automne, nous exposons et vendons nos pièces à la salle des fêtes de Port-des-Barques. C’est le meilleur moment pour venir nous rencontrer.</p>
+
+        <!-- PROCHAIN RENDEZ-VOUS : remplacer la phrase ci-dessous quand une date est connue.
+             Exemple : <strong>Exposition-vente</strong> samedi 2 mai 2027, 10 h – 17 h, salle des fêtes de Port-des-Barques -->
+        <p class="prochain">
+          <span class="prochain__titre">Prochain rendez-vous</span>
+          <span class="prochain__texte">Date à venir&nbsp;: elle sera annoncée sur notre <a href="https://www.facebook.com/groups/818583442289298" rel="noopener">groupe Facebook</a>.</span>
+        </p>
+
+        <h3>Nos dernières expositions</h3>
+        <!-- Ajouter une ligne <tr> en haut du tableau pour chaque nouvel événement -->
+        <table class="annuaire">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Événement</th>
+              <th scope="col">Lieu</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>21 et 22 nov. 2026</td>
+              <td>Exposition-vente</td>
+              <td>Salle des fêtes, Port-des-Barques</td>
+            </tr>
+            <tr>
+              <td>1<sup>er</sup> et 2 nov. 2025</td>
+              <td>Exposition-vente</td>
+              <td>Salle des fêtes, Port-des-Barques</td>
+            </tr>
+            <tr>
+              <td>3 et 4 mai 2025</td>
+              <td>Exposition-vente</td>
+              <td>Salle des fêtes, Port-des-Barques</td>
+            </tr>
+            <tr>
+              <td>29 nov. 2020</td>
+              <td>Marché de Noël</td>
+              <td>Salle polyvalente, Port-des-Barques</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="note">Horaires habituels des expositions&nbsp;: le samedi de 10 h à 17 h, le dimanche de 10 h à 15 h.</p>
+      </div>
+    </section>
+
+    <!-- ============ INFOS PRATIQUES ET CONTACT ============ -->
+    <!-- Les mentions « à compléter » sont à remplacer par les vraies informations (voir README.md) -->
+    <section class="bande bande--eau contact" id="contact" aria-labelledby="titre-contact">
+      <div class="conteneur">
+        <h2 id="titre-contact">Infos pratiques et contact</h2>
+
+        <div class="contact__grille">
+          <div class="cartouche contact__bloc">
+            <h3>Nous contacter</h3>
+            <dl class="fiche">
+              <div>
+                <dt>Par e-mail</dt>
+                <dd>
+                  <span class="a-completer">Adresse à compléter</span>
+                  <!-- Remplacer la ligne ci-dessus par :
+                  <a href="mailto:votre.adresse@exemple.fr">votre.adresse@exemple.fr</a> -->
+                </dd>
+              </div>
+              <div>
+                <dt>Par téléphone</dt>
+                <dd>
+                  <span class="a-completer">Numéro à compléter</span>
+                  <!-- Remplacer la ligne ci-dessus par (numéro sans espaces dans href) :
+                  <a href="tel:+33600000000">06 00 00 00 00</a> -->
+                </dd>
+              </div>
+              <div>
+                <dt>Sur Facebook</dt>
+                <dd><a href="https://www.facebook.com/groups/818583442289298" rel="noopener">Groupe «&nbsp;Porcelaine des Demoiselles&nbsp;»</a></dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="contact__bloc">
+            <h3>L’atelier en pratique</h3>
+            <dl class="fiche">
+              <div>
+                <dt>Lieu des séances</dt>
+                <dd><span class="a-completer">À compléter</span></dd>
+              </div>
+              <div>
+                <dt>Jours et horaires</dt>
+                <dd><span class="a-completer">À compléter</span></dd>
+              </div>
+              <div>
+                <dt>Cotisation</dt>
+                <dd><span class="a-completer">À compléter</span></dd>
+              </div>
+              <div>
+                <dt>Expositions</dt>
+                <dd>Salle des fêtes de Port-des-Barques (Charente-Maritime)</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ PIED DE PAGE ============ -->
+  <footer class="pied">
+    <div class="conteneur pied__interieur">
+      <p class="pied__nom">Porcelaine des Demoiselles</p>
+      <p>Atelier associatif de peinture sur porcelaine<br>Port-des-Barques, Charente-Maritime</p>
+      <ul class="pied__liens">
+        <li><a href="./mentions-legales.html">Mentions légales</a></li>
+        <li><a href="https://www.facebook.com/groups/818583442289298" rel="noopener">Groupe Facebook</a></li>
+        <li><a href="#contenu">Haut de page</a></li>
+      </ul>
+      <p class="pied__note">Toutes les pièces présentées ont été peintes par les membres de l’atelier.</p>
+    </div>
+  </footer>
+
+  <!-- Visionneuse de photos (utilisée par js/galerie.js) -->
+  <dialog class="visionneuse" id="visionneuse" aria-label="Photo agrandie">
+    <div class="visionneuse__interieur">
+      <figure class="visionneuse__figure">
+        <img class="visionneuse__image" src="./images/galerie/assiette-iris.jpg" loading="lazy" alt="">
+        <figcaption>
+          <span class="visionneuse__legende"></span>
+          <span class="visionneuse__compteur"></span>
+        </figcaption>
+      </figure>
+      <div class="visionneuse__commandes">
+        <button type="button" class="bouton bouton--trait" data-action="precedente">Précédente</button>
+        <button type="button" class="bouton" data-action="fermer">Fermer</button>
+        <button type="button" class="bouton bouton--trait" data-action="suivante">Suivante</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="./js/galerie.js" defer></script>
+</body>
+</html>

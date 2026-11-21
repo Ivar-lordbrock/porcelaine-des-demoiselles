@@ -1,0 +1,163 @@
+/* =========================================================
+   layout.css — conteneur, en-tête, bandes de couleur, pied de page
+   ========================================================= */
+
+/* Largeur maximale du contenu + marges sur les côtés */
+.conteneur {
+  width: 100%;
+  max-width: calc(var(--largeur-max) + 2 * var(--marge));
+  margin-inline: auto;
+  padding-inline: var(--marge);
+}
+
+/* ---------- En-tête ---------- */
+.entete {
+  background: var(--eau);
+  padding-block: var(--espace-3) var(--espace-2);
+}
+
+.entete__interieur {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espace-2) var(--espace-4);
+}
+
+.marque {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 3rem;
+  font-family: var(--police-titre);
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.1;
+  text-decoration: none;
+}
+
+.marque__signe {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: none;
+  color: var(--encre);
+}
+
+.marque__point {
+  fill: var(--lavande);
+}
+
+.navigation ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--espace-3);
+  list-style: none;
+}
+
+.navigation a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;     /* zone cliquable confortable */
+  font-size: var(--texte-petit);
+  font-weight: 600;
+  text-decoration-color: transparent;
+}
+
+.navigation a:hover {
+  text-decoration-color: var(--lavande);
+}
+
+/* ---------- Bandes (sections) ---------- */
+.bande {
+  padding-block: var(--espace-section);
+}
+
+.bande--eau-claire {
+  background: var(--eau-claire);
+}
+
+.bande--eau {
+  background: var(--eau);
+}
+
+/* Bande foncée : on éclaircit textes, liens et contours */
+.bande--profonde {
+  background: var(--profond);
+  color: var(--sur-profond);
+}
+
+.bande--profonde h2,
+.bande--profonde h3 {
+  color: var(--blanc);
+}
+
+.bande--profonde a {
+  text-decoration-color: var(--lavande-claire);
+}
+
+.bande--profonde :focus-visible {
+  outline-color: var(--lavande-claire);
+}
+
+/* ---------- Pied de page ---------- */
+.pied {
+  background: var(--profond);
+  color: var(--sur-profond-doux);
+  padding-block: var(--espace-5);
+  font-size: var(--texte-petit);
+}
+
+.pied__interieur {
+  display: grid;
+  gap: var(--espace-2) var(--espace-4);
+}
+
+.pied p {
+  margin: 0;
+}
+
+.pied__nom {
+  font-family: var(--police-titre);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--blanc);
+}
+
+.pied__liens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--espace-3);
+  list-style: none;
+}
+
+.pied a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  color: var(--sur-profond);
+  text-decoration-color: var(--lavande-claire);
+}
+
+.pied :focus-visible {
+  outline-color: var(--lavande-claire);
+}
+
+.pied__note {
+  padding-top: var(--espace-2);
+  border-top: 1px dotted var(--sur-profond-doux);
+}
+
+@media (min-width: 56rem) {
+  .pied__interieur {
+    grid-template-columns: 1fr 1.4fr auto;
+    align-items: start;
+  }
+
+  .pied__nom {
+    grid-row: span 2;
+  }
+
+  .pied__note {
+    grid-column: 2 / -1;
+  }
+}

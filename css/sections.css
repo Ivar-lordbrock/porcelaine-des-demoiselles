@@ -1,0 +1,362 @@
+/* =========================================================
+   sections.css — le style de chaque partie de la page
+   (accueil, atelier, nous rejoindre, rendez-vous, contact, mentions)
+   ========================================================= */
+
+/* ---------- Accueil ---------- */
+.accueil {
+  --hauteur-cote: clamp(56px, 8vw, 120px);
+  position: relative;
+  background: var(--eau);
+  padding-top: var(--espace-4);
+}
+
+.accueil__grille {
+  position: relative;
+  z-index: 1;               /* la photo passe devant la ligne de côte */
+  display: grid;
+  gap: var(--espace-5);
+  align-items: center;
+}
+
+.accueil__texte {
+  padding-bottom: var(--espace-2);
+}
+
+.accueil h1 {
+  margin-bottom: var(--espace-2);
+}
+
+.accueil__soustitre {
+  font-family: var(--police-titre);
+  font-size: var(--titre-3);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--encre-douce);
+  margin-bottom: var(--espace-4);
+}
+
+.accueil__intro {
+  font-size: calc(var(--texte) * 1.08);
+  max-width: 34ch;
+}
+
+.accueil__mention {
+  font-weight: 700;
+  color: var(--lavande);
+  max-width: 34ch;
+}
+
+.accueil__image {
+  justify-self: center;
+  width: min(100%, 26rem);
+  --ecart-filet: 6px;
+}
+
+/* La ligne de côte en bas de l'accueil */
+.cote {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: var(--hauteur-cote);
+}
+
+.cote__terre {
+  fill: var(--fond);
+}
+
+.cote__sonde {
+  fill: none;
+  stroke: var(--encre);
+  stroke-opacity: 0.55;
+  stroke-width: 1.5;
+  stroke-dasharray: 1.5 7;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+@media (min-width: 56rem) {
+  .accueil {
+    padding-top: var(--espace-3);
+  }
+
+  .accueil__grille {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: var(--espace-4);
+  }
+
+  .accueil__texte {
+    padding-bottom: calc(var(--hauteur-cote) + var(--espace-3));
+  }
+
+  .accueil__image {
+    justify-self: end;
+    width: min(100%, 25rem);
+    margin-bottom: calc(var(--hauteur-cote) * -0.35);
+  }
+}
+
+@media (max-width: 55.99rem) {
+  .accueil__grille {
+    padding-bottom: calc(var(--hauteur-cote) * 0.55);
+  }
+}
+
+/* ---------- L'atelier ---------- */
+.atelier {
+  padding-top: calc(var(--espace-section) * 0.9);
+}
+
+.atelier__grille {
+  display: grid;
+  gap: var(--espace-5);
+  align-items: start;
+}
+
+.atelier__image {
+  width: min(100%, 24rem);
+  justify-self: center;
+}
+
+/* Liste séparée par des pointillés, comme des lignes de sonde */
+.liste-sonde {
+  list-style: none;
+  max-width: 30rem;
+  border-top: 1px dotted var(--obione);
+}
+
+.liste-sonde li {
+  padding-block: 0.6rem;
+  border-bottom: 1px dotted var(--obione);
+}
+
+@media (min-width: 56rem) {
+  .atelier__grille {
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: var(--espace-5) clamp(3rem, 6vw, 6rem);
+  }
+
+  .atelier__image {
+    justify-self: end;
+    margin-top: calc(var(--titre-2) * 1.6);
+  }
+}
+
+/* ---------- Nous rejoindre ---------- */
+.rejoindre h2 {
+  max-width: 18ch;
+}
+
+.rejoindre__intro {
+  font-size: calc(var(--texte) * 1.08);
+  color: var(--sur-profond);
+  max-width: 48ch;
+  margin-bottom: var(--espace-5);
+}
+
+/* Les trois étapes, numérotées dans l'ordre */
+.etapes {
+  list-style: none;
+  counter-reset: etape;
+  display: grid;
+  gap: var(--espace-4);
+}
+
+.etape {
+  counter-increment: etape;
+  position: relative;
+  padding-top: var(--espace-3);
+  border-top: 1px dotted var(--sur-profond-doux);
+}
+
+.etape::before {
+  content: counter(etape);
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: var(--espace-2);
+  border: 2px solid var(--lavande-claire);
+  border-radius: 50%;
+  outline: 1px solid var(--lavande-claire);
+  outline-offset: 3px;
+  font-family: var(--police-titre);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--blanc);
+}
+
+.etape p {
+  color: var(--sur-profond-doux);
+  margin-bottom: 0;
+}
+
+.rejoindre .actions {
+  margin-top: var(--espace-5);
+}
+
+@media (min-width: 60rem) {
+  .etapes {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espace-5);
+  }
+}
+
+/* ---------- Rendez-vous ---------- */
+.rendez-vous__intro {
+  margin-bottom: var(--espace-4);
+}
+
+/* Le prochain rendez-vous : une ligne encadrée d'un double filet */
+.prochain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--espace-1) var(--espace-3);
+  max-width: none;
+  padding-block: var(--espace-3);
+  border-block: 4px double var(--encre);
+}
+
+.prochain__titre {
+  font-family: var(--police-titre);
+  font-size: var(--titre-3);
+  font-weight: 700;
+}
+
+/* Tableau des expositions, façon annuaire des marées */
+.annuaire {
+  width: 100%;
+  max-width: 52rem;
+  border-collapse: collapse;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.annuaire th {
+  padding: 0 var(--espace-2) var(--espace-1) 0;
+  font-size: var(--texte-petit);
+  font-weight: 700;
+  color: var(--encre-douce);
+  text-align: left;
+  border-bottom: 2px solid var(--encre);
+}
+
+.annuaire td {
+  padding: 0.8rem var(--espace-2) 0.8rem 0;
+  border-bottom: 1px dotted var(--obione);
+  vertical-align: top;
+}
+
+.annuaire td:first-child {
+  font-family: var(--police-titre);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.note {
+  margin-top: var(--espace-3);
+  color: var(--encre-douce);
+}
+
+/* Sur petit écran, chaque ligne du tableau devient un petit bloc */
+@media (max-width: 40rem) {
+  .annuaire thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .annuaire tr {
+    display: block;
+    padding-block: 0.8rem;
+    border-bottom: 1px dotted var(--obione);
+  }
+
+  .annuaire tbody tr:first-child {
+    border-top: 2px solid var(--encre);
+  }
+
+  .annuaire td {
+    display: block;
+    padding: 0;
+    border: 0;
+  }
+
+  .annuaire td:last-child {
+    color: var(--encre-douce);
+  }
+}
+
+/* ---------- Infos pratiques et contact ---------- */
+.contact__grille {
+  display: grid;
+  gap: var(--espace-5);
+  align-items: start;
+}
+
+.contact__bloc.cartouche {
+  --ecart-filet: 5px;
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+}
+
+.contact__bloc:not(.cartouche) {
+  padding-top: clamp(1.25rem, 3vw, 2.25rem);
+}
+
+/* Liste « intitulé : valeur » séparée par des pointillés */
+.fiche {
+  margin: 0;
+}
+
+.fiche > div {
+  padding-block: 0.85rem;
+  border-bottom: 1px dotted var(--obione);
+}
+
+.fiche > div:first-child {
+  border-top: 1px dotted var(--obione);
+}
+
+.fiche dt {
+  font-size: var(--texte-petit);
+  font-weight: 700;
+  color: var(--encre-douce);
+}
+
+.fiche dd {
+  margin: 0.15rem 0 0;
+  overflow-wrap: anywhere;
+}
+
+.fiche a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  font-weight: 700;
+}
+
+@media (min-width: 56rem) {
+  .contact__grille {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espace-5) clamp(3rem, 6vw, 6rem);
+  }
+}
+
+/* ---------- Page des mentions légales ---------- */
+.mentions h1 {
+  font-size: var(--titre-2);
+  margin-bottom: var(--espace-4);
+}
+
+.prose h2 {
+  font-size: var(--titre-3);
+  margin: var(--espace-4) 0 var(--espace-1);
+}
+
+.mentions__retour {
+  margin-top: var(--espace-5);
+}

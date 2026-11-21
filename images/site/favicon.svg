@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Une assiette vue de dessus : double filet (épais + fin), comme sur les bords peints -->
+  <circle cx="32" cy="32" r="30" fill="#f7fafa"/>
+  <circle cx="32" cy="32" r="27" fill="none" stroke="#15303d" stroke-width="4"/>
+  <circle cx="32" cy="32" r="20.5" fill="none" stroke="#15303d" stroke-width="1.6"/>
+  <circle cx="32" cy="32" r="6" fill="#6b4c84"/>
+</svg>
