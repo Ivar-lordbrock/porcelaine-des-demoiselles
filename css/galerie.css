@@ -67,6 +67,7 @@
 /* Les boutons « Précédentes » et « Suivantes » (seulement avec JavaScript) */
 .galerie__commandes {
   display: none;
+  justify-content: center;
   gap: var(--espace-2);
   margin-top: var(--espace-3);
 }
