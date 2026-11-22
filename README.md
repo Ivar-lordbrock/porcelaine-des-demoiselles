@@ -11,7 +11,7 @@ porcelaine-des-demoiselles/
 ├── mentions-legales.html   la page des mentions légales
 ├── css/
 │   ├── base.css            couleurs, polices, tailles, boutons, liens
-│   ├── layout.css          en-tête, bandes de couleur, pied de page
+│   ├── layout.css          l’en-tête, le menu, les parties (fonds de couleur), le pied de page
 │   ├── sections.css        le style de chaque partie (accueil, atelier, rendez-vous…)
 │   └── galerie.css         la grille de photos et la visionneuse
 ├── js/
@@ -19,7 +19,7 @@ porcelaine-des-demoiselles/
 │   └── galerie.js          agrandit une photo au clic (rien à y toucher)
 ├── fonts/                  les deux polices, hébergées sur le site
 ├── images/
-│   ├── site/               image d’accueil et icône d’onglet (favicon)
+│   ├── site/               l’icône d’onglet (favicon.svg)
 │   ├── galerie/            les photos des pièces peintes
 │   └── atelier/            réservé aux photos de la vie du groupe (vide pour l’instant)
 ├── README.md               ce fichier
@@ -33,9 +33,9 @@ Tout le texte est dans **index.html**. Le fichier est découpé en parties repé
 
 | Partie du site      | Repère dans index.html                    |
 |---------------------|-------------------------------------------|
+| Menu                | `<!-- ============ EN-TÊTE ============ -->` |
 | Haut de page        | `<!-- ============ ACCUEIL ============ -->` |
-| L’atelier           | `<!-- ============ L'ATELIER ============ -->` |
-| Nous rejoindre      | `<!-- ============ NOUS REJOINDRE ============ -->` |
+| L’atelier (et « Venir peindre avec nous ») | `<!-- ============ L'ATELIER ============ -->` |
 | Galerie             | `<!-- ============ GALERIE ============ -->` |
 | Rendez-vous         | `<!-- ============ RENDEZ-VOUS ============ -->` |
 | Contact et infos    | `<!-- ============ INFOS PRATIQUES ET CONTACT ============ -->` |
@@ -51,7 +51,7 @@ Exemple : `Débutantes bienvenues&nbsp;: la peinture…`. Gardez-les quand vous 
 
 ## Remplir les informations « à compléter »
 
-Sur le site, ces informations apparaissent en violet, soulignées de tirets. Elles sont à remplacer par les vraies :
+Sur le site, ces informations apparaissent en ocre, soulignées de tirets. Elles sont à remplacer par les vraies :
 
 **Dans index.html, partie « INFOS PRATIQUES ET CONTACT » :**
 
@@ -68,7 +68,7 @@ Une information que vous ne voulez pas afficher (la cotisation, par exemple) : s
 
 Dans la partie « RENDEZ-VOUS » :
 
-1. **Le prochain rendez-vous** — remplacez la phrase « Date à venir… » dans `<span class="prochain__texte">`. Un exemple est donné en commentaire juste au-dessus.
+1. **Le prochain rendez-vous** — remplacez la phrase « Date à venir… » dans `<span class="prochain__texte">`. Un exemple est donné en commentaire juste au-dessus. Sur ordinateur, cet avis s’affiche sous le titre « Rendez-vous ».
 2. **Le tableau des expositions** — pour ajouter un événement, copiez un bloc `<tr> … </tr>` et collez-le **en haut** du tableau (juste après `<tbody>`), puis changez la date, l’événement et le lieu.
 
 Pour écrire « 1er », utilisez `1<sup>er</sup>`.
@@ -94,7 +94,7 @@ Pour écrire « 1er », utilisez `1<sup>er</sup>`.
    - le nom du fichier, **aux deux endroits** (`href` et `src`) ;
    - `width` et `height` avec la taille notée à l’étape 3 (cela évite que la page « saute » au chargement) ;
    - `alt` : une phrase qui décrit la pièce pour les personnes qui ne voient pas l’image ;
-   - `<figcaption>` : la légende courte affichée sous la photo.
+   - `<figcaption>` : le nom de la pièce, affiché sous la photo.
 
 La visionneuse (photo agrandie au clic, boutons Précédente / Suivante) prend la nouvelle photo en compte toute seule.
 
@@ -102,21 +102,36 @@ Pour retirer une photo : supprimez son bloc `<figure> … </figure>` et le fichi
 
 **Photos de personnes** : le dossier `images/atelier/` est prévu pour les moments de groupe. Ne publiez une photo où l’on reconnaît quelqu’un qu’avec son accord.
 
-### Changer l’image d’accueil
+### Changer les pièces du haut de page
 
-Remplacez `images/site/accueil-rouge-gorge.jpg` par une autre image (portrait, environ 1000 × 1400 pixels), ou changez le nom du fichier dans la partie « ACCUEIL » d’index.html, sans oublier `width`, `height` et `alt`.
+Le haut de page montre trois pièces posées côte à côte sur une même ligne, comme sur la table d’une exposition-vente, chacune avec son cartel (le petit texte à côté : le nom de la pièce, puis une ligne d’explication). Derrière elles, une bande rose poudré (la « nappe ») part du bas des pièces et rejoint la partie « L’atelier », qui a la même couleur.
+
+Dans la partie « ACCUEIL » d’index.html, chaque pièce est un bloc `<figure class="oeuvre …"> … </figure>` :
+
+- `oeuvre--grande` : la plus haute, à gauche (une pièce en hauteur, comme un plateau long, lui va bien) ;
+- `oeuvre--moyenne` : au milieu ;
+- `oeuvre--petite` : à droite.
+
+Pour changer une pièce, modifiez `src`, `width`, `height`, `alt` et le texte du cartel. Les photos ne sont jamais recadrées : elles gardent leurs proportions.
+
+### Changer la pièce de « L’atelier »
+
+Dans la partie « L’ATELIER », la photo posée sous le titre est le bloc `<figure class="partie__piece"> … </figure>`. Même principe : `src`, `width`, `height`, `alt` et le cartel.
 
 ## Changer les couleurs ou les tailles
 
 Tout est réglé au début de **css/base.css**, dans le bloc `:root { … }` :
 
-- `--fond`, `--eau`, `--eau-claire` : le blanc et les bleus clairs des bandes ;
-- `--profond` : le bleu foncé (bande « Nous rejoindre », pied de page) ;
-- `--encre`, `--encre-douce` : la couleur du texte ;
-- `--lavande` : la couleur d’accent (liens, mise en avant) ;
-- `--texte` : la taille du texte courant.
+- les fonds : `--fond` (lin : haut de page, galerie, contact, photo agrandie), `--fort` (rose poudré : la bande sous les pièces, « L’atelier » et le petit carton « Prochaine exposition »), `--fond-doux` (rose clair : « Rendez-vous »), `--pied` (terre cuite : le pied de page) ;
+- les textes posés sur ces fonds : `--fort-texte`, `--fort-doux`, `--fort-titre`, `--fort-lien` (sur le rose poudré), `--pied-texte`, `--pied-doux` (sur le pied de page) ;
+- le texte : `--encre` (texte principal), `--encre-douce` (cartels, légendes, notes) ;
+- `--accent` (terre cuite : le mot « Demoiselles » du titre) et `--lien` (les titres des parties et les liens) ;
+- `--filet` : les traits fins entre les lignes ; `--ocre` : le repère des informations « à compléter » ;
+- `--rayon` : l’arrondi des coins des photos ; `--texte` : la taille du texte courant.
 
-Changez une valeur à cet endroit, elle s’applique à tout le site. Gardez un texte bien foncé sur fond clair : le site est pensé pour être lu sans effort.
+Chaque partie choisit son fond avec une classe dans index.html : `fond-fort` (L’atelier), `fond-doux` (Rendez-vous) ; sans classe, la partie garde le fond lin (Nos pièces, Contact). Pour changer le fond d’une partie, changez cette classe.
+
+Changez une valeur à cet endroit, elle s’applique à tout le site. Pas de blanc ni de bleu : l’association les a refusés. Gardez un texte bien foncé sur fond clair : le site est pensé pour être lu sans effort.
 
 ## Voir le site sur son ordinateur
 
@@ -158,10 +173,11 @@ Le fichier vide `.nojekyll` indique à GitHub de publier les fichiers tels quels
 
 Ces passages ont été rédigés d’après le groupe Facebook ; à vérifier ou ajuster :
 
-- les trois étapes de « Nous rejoindre » (Prenez contact / Venez nous rencontrer / Lancez-vous), notamment « Passez voir l’atelier » : est-ce possible de venir à une séance ?
+- les phrases du haut de page et de « L’atelier », réécrites plus simplement (« Une dizaine d’amies… », « On part d’une pièce blanche… ») ;
+- « Venir peindre avec nous » : le site invite à écrire ou à venir à une exposition-vente ; s’il est possible d’assister à une séance, on peut l’ajouter ;
 - l’exposition des **21 et 22 novembre** : l’année **2026** a été déduite de la date de publication sur Facebook ;
-- les légendes et descriptions des photos de la galerie.
+- les légendes et descriptions des photos de la galerie, et les cartels du haut de page (« Peinture à la main sur porcelaine »).
 
 ## Polices
 
-Alegreya (titres) et Atkinson Hyperlegible Next (texte) sont sous licence libre SIL Open Font License : voir `fonts/LICENCES.txt`.
+Newsreader (titres, droit et italique) et Atkinson Hyperlegible Next (texte et menu) sont sous licence libre SIL Open Font License : voir `fonts/LICENCES.txt`.

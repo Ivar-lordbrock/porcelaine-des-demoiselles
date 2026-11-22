@@ -1,7 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Une assiette vue de dessus : double filet (épais + fin), comme sur les bords peints -->
-  <circle cx="32" cy="32" r="30" fill="#f7fafa"/>
-  <circle cx="32" cy="32" r="27" fill="none" stroke="#15303d" stroke-width="4"/>
-  <circle cx="32" cy="32" r="20.5" fill="none" stroke="#15303d" stroke-width="1.6"/>
-  <circle cx="32" cy="32" r="6" fill="#6b4c84"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Une assiette couleur lin vue de dessus, cerclée de terre cuite, sur la terre cuite du pied de page -->
+  <rect width="32" height="32" rx="7" fill="#8e4a33"/>
+  <circle cx="16" cy="16" r="12" fill="#f6ece2"/>
+  <circle cx="16" cy="16" r="7.5" fill="none" stroke="#9e5239" stroke-width="1.6"/>
 </svg>

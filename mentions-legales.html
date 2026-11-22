@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mentions légales · Porcelaine des Demoiselles</title>
   <meta name="description" content="Mentions légales du site de l’atelier Porcelaine des Demoiselles, Port-des-Barques.">
-  <meta name="theme-color" content="#cfe1e4">
+  <meta name="theme-color" content="#f2e9de">
   <meta name="robots" content="noindex">
 
-  <link rel="preload" href="./fonts/alegreya.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./fonts/atkinson-hyperlegible-next.woff2" as="font" type="font/woff2" crossorigin>
   <script>document.documentElement.classList.add("js");</script>
   <link rel="stylesheet" href="./css/base.css">
@@ -20,16 +20,11 @@
 <body>
   <a class="lien-evitement" href="#contenu">Aller au contenu</a>
 
+  <!-- ============ EN-TÊTE ============ -->
   <header class="entete">
     <div class="conteneur entete__interieur">
-      <a class="marque" href="./index.html">
-        <svg class="marque__signe" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-          <circle cx="32" cy="32" r="27" fill="none" stroke="currentColor" stroke-width="4"/>
-          <circle cx="32" cy="32" r="20.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
-          <circle cx="32" cy="32" r="6" class="marque__point"/>
-        </svg>
-        <span>Porcelaine des Demoiselles</span>
-      </a>
+      <a class="marque" href="./index.html">Porcelaine des Demoiselles</a>
+      <!-- Bouton « Menu », visible seulement sur téléphone (géré par js/menu.js) -->
       <button class="menu-bouton" type="button" aria-expanded="false" aria-controls="navigation-principale">
         <span class="menu-bouton__icone" aria-hidden="true"></span>
         Menu
@@ -37,7 +32,6 @@
       <nav class="navigation" id="navigation-principale" aria-label="Navigation principale">
         <ul>
           <li><a href="./index.html#atelier">L’atelier</a></li>
-          <li><a href="./index.html#rejoindre">Nous rejoindre</a></li>
           <li><a href="./index.html#galerie">Nos pièces</a></li>
           <li><a href="./index.html#rendez-vous">Rendez-vous</a></li>
           <li><a href="./index.html#contact">Contact</a></li>
@@ -47,7 +41,7 @@
   </header>
 
   <!-- Les mentions « à compléter » sont à remplacer par les vraies informations -->
-  <main id="contenu" class="bande mentions">
+  <main id="contenu" class="partie mentions">
     <div class="conteneur prose">
       <h1>Mentions légales</h1>
 
@@ -70,7 +64,7 @@
       <h2>Données personnelles et cookies</h2>
       <p>Ce site ne dépose aucun cookie, ne mesure pas l’audience et ne collecte aucune donnée personnelle. Les polices de caractères sont hébergées sur le site lui-même. Si vous nous écrivez, votre message sert uniquement à vous répondre.</p>
 
-      <p class="mentions__retour"><a class="lien-fort" href="./index.html">Retour à l’accueil</a></p>
+      <p class="mentions__retour"><a href="./index.html">Retour à l’accueil</a></p>
     </div>
   </main>
 
@@ -84,6 +78,7 @@
       </ul>
     </div>
   </footer>
+
 
   <script src="./js/menu.js" defer></script>
 </body>

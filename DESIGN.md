@@ -1,178 +1,234 @@
 ---
 name: Porcelaine des Demoiselles
-description: La côte de Port-des-Barques vue comme une carte marine rehaussée à la main.
+description: La table de l'exposition-vente, un après-midi d'automne : salle lin, nappe rose poudré, pièces peintes debout.
 colors:
-  fond-porcelaine: "#f7fafa"
-  blanc: "#ffffff"
-  eau-claire: "#e5eff0"
-  eau: "#cfe1e4"
-  profond: "#17384a"
-  encre: "#15303d"
-  encre-douce: "#3c5664"
-  obione: "#6a8873"
-  lavande: "#6b4c84"
-  lavande-claire: "#d8c8e6"
-  sur-profond: "#e8f1f2"
-  sur-profond-doux: "#c6d8dc"
+  fond: "#f2e9de"
+  fond-doux: "#f6e1d9"
+  fort: "#ebcfc6"
+  fort-texte: "#3b2e28"
+  fort-doux: "#6e4a3e"
+  fort-titre: "#85432d"
+  fort-lien: "#85432d"
+  fort-filet: "rgb(59 46 40 / 0.2)"
+  pied: "#8e4a33"
+  pied-texte: "#fbefe6"
+  pied-doux: "#f3d9cb"
+  encre: "#3b2e28"
+  encre-douce: "#6e4a3e"
+  accent: "#9e5239"
+  lien: "#85432d"
+  ocre: "#7a4f06"
+  filet: "rgb(59 46 40 / 0.2)"
+  selection: "#e9b8a6"
+  survol: "rgb(59 46 40 / 0.07)"
 typography:
   titre-1:
-    fontFamily: "Alegreya, Georgia, serif"
-    fontSize: "clamp(2.75rem, 1.6rem + 4.4vw, 5rem)"
-    fontWeight: 800
-    lineHeight: 1
-    letterSpacing: "-0.01em"
+    fontFamily: "Newsreader, Georgia, 'Times New Roman', serif"
+    fontSize: "clamp(3rem, 1.1rem + 5.6vw, 5.875rem)"
+    fontWeight: 400
+    lineHeight: 0.98
+    letterSpacing: "-0.025em"
   titre-2:
-    fontFamily: "Alegreya, Georgia, serif"
-    fontSize: "clamp(2.125rem, 1.6rem + 2vw, 3.125rem)"
-    fontWeight: 700
-    lineHeight: 1.08
-    letterSpacing: "-0.01em"
+    fontFamily: "Newsreader, Georgia, 'Times New Roman', serif"
+    fontSize: "clamp(2.375rem, 1.3rem + 3vw, 3.875rem)"
+    fontWeight: 400
+    lineHeight: 1.02
+    letterSpacing: "-0.02em"
   titre-3:
-    fontFamily: "Alegreya, Georgia, serif"
-    fontSize: "clamp(1.375rem, 1.25rem + 0.5vw, 1.625rem)"
-    fontWeight: 600
-    lineHeight: 1.08
+    fontFamily: "Newsreader, Georgia, 'Times New Roman', serif"
+    fontSize: "clamp(1.5rem, 1.35rem + 0.5vw, 1.75rem)"
+    fontWeight: 500
+    lineHeight: 1.2
+    letterSpacing: "-0.01em"
+  cartel-nom:
+    fontFamily: "Newsreader, Georgia, 'Times New Roman', serif"
+    fontSize: "1.25rem"
+    fontWeight: 500
+    lineHeight: 1.3
   texte:
-    fontFamily: "Atkinson Hyperlegible Next, Segoe UI, Arial, sans-serif"
+    fontFamily: "'Atkinson Hyperlegible Next', 'Segoe UI', Arial, sans-serif"
     fontSize: "clamp(1.1875rem, 1.1rem + 0.3vw, 1.3125rem)"
     fontWeight: 400
     lineHeight: 1.6
   texte-petit:
-    fontFamily: "Atkinson Hyperlegible Next, Segoe UI, Arial, sans-serif"
+    fontFamily: "'Atkinson Hyperlegible Next', 'Segoe UI', Arial, sans-serif"
     fontSize: "1.0625rem"
     fontWeight: 400
-    lineHeight: 1.5
+    lineHeight: 1.4
 rounded:
-  bouton: "3px"
-  aucun: "0"
+  rayon: "14px"
+  pilule: "999px"
 spacing:
   espace-1: "0.5rem"
   espace-2: "1rem"
   espace-3: "1.5rem"
   espace-4: "2.5rem"
   espace-5: "clamp(3rem, 2rem + 3vw, 4.5rem)"
-  espace-section: "clamp(4.5rem, 3rem + 6vw, 8rem)"
+  espace-section: "clamp(4rem, 2.5rem + 4vw, 6rem)"
+  marge: "clamp(1.25rem, 4.5vw, 4rem)"
+  gouttiere: "clamp(1rem, 2.2vw, 2rem)"
 components:
   bouton:
-    backgroundColor: "{colors.profond}"
-    textColor: "{colors.sur-profond}"
-    typography: "{typography.texte}"
-    rounded: "{rounded.bouton}"
-    padding: "0.75rem 1.75rem"
-    height: "3.25rem"
-  bouton-clair:
-    backgroundColor: "{colors.fond-porcelaine}"
-    textColor: "{colors.profond}"
-    rounded: "{rounded.bouton}"
-    padding: "0.75rem 1.75rem"
-    height: "3.25rem"
-  cartouche:
-    backgroundColor: "{colors.blanc}"
-    rounded: "{rounded.aucun}"
-    padding: "clamp(0.625rem, 1.4vw, 1rem)"
+    backgroundColor: "transparent"
+    textColor: "{colors.encre}"
+    typography: "{typography.texte-petit}"
+    rounded: "{rounded.pilule}"
+    padding: "0.6rem 1.4rem"
+    height: "3rem"
+  bouton-survol:
+    backgroundColor: "{colors.survol}"
+    textColor: "{colors.encre}"
+  carton-prochain:
+    backgroundColor: "{colors.fort}"
+    textColor: "{colors.fort-texte}"
+    padding: "clamp(1.25rem, 1rem + 1vw, 1.75rem) clamp(1.25rem, 1rem + 1.2vw, 2rem)"
+  piece:
+    rounded: "{rounded.rayon}"
+  pied:
+    backgroundColor: "{colors.pied}"
+    textColor: "{colors.pied-texte}"
+  a-completer:
+    textColor: "{colors.ocre}"
 ---
 
 # Design System: Porcelaine des Demoiselles
 
 ## Overview
 
-Le site est la côte de Port-des-Barques dessinée comme une **carte marine rehaussée à la main** : un fond blanc froid qui est aussi le blanc de la porcelaine, des bandes d’eau peu profonde en aplats pleine largeur, un texte bleu encre, des lignes de sonde pointillées vert des prés salés, et une seule couleur d’accent, la lavande de mer.
+**Creative North Star : « La table de l'exposition-vente »**
 
-Les cadres reprennent à la fois les **cartouches** des cartes anciennes et les **filets** peints au bord des assiettes : un trait épais, un trait fin, un écart blanc entre les deux. Une seule ligne de côte courbe ferme le haut de page. Les expositions sont présentées comme un annuaire des marées.
+Le site est une salle couleur lin, un après-midi d'automne. Les pièces peintes sont posées debout sur une nappe rose poudré ; « L'atelier » est sur la même nappe, « Rendez-vous » sur un rose plus clair, et un pied de page terre cuite ferme la page. Tout est doux, chaud et calme : les photos des pièces font la décoration, rien d'autre.
 
-Le public est d’abord local et souvent âgé : tout est grand, contrasté, calme. Pas d’effet, pas d’animation décorative, pas d’icônes. Les photos des pièces peintes sont l’ornement principal.
+Le ton est celui d'un petit carton posé à côté d'une pièce, pas d'une publicité. Le texte est grand et très lisible, pensé pour des personnes souvent retraitées, sur tablette ou téléphone, à la vue parfois faible.
+
+**Points clés :**
+- Fonds de couleur par partie (lin, rose poudré, rose clair, terre cuite) ; jamais de blanc, jamais de bleu.
+- Titres en Newsreader droit, un mot en italique terre cuite dans le grand titre.
+- Photos aux coins doux avec une ombre chaude ; elles se soulèvent au survol.
+- Listes et fiches en lignes fines, comme un inventaire.
+- Palette choisie par l'association le 22 novembre 2026 : ne pas la changer sans leur accord.
 
 ## Colors
 
+Une palette de terre et de tissu : lin, rose poudré, terre cuite, brun très foncé. Chaque couleur est un rôle dans `css/base.css`, pas une teinte libre.
+
 ### Primary
-- **Encre** `#15303d` : texte principal, filets des cartouches, bordures fortes. 13:1 sur le fond.
-- **Profond** `#17384a` : bande « Nous rejoindre », pied de page, boutons.
+- **Terre cuite accent** (accent) : uniquement le mot en italique du grand titre (« Demoiselles »), le survol du nom et du menu. Rare, c'est ce qui le rend visible.
+- **Terre cuite foncée** (lien) : titres des parties (h2) et liens soulignés. Assez foncée pour le texte courant.
 
 ### Secondary
-- **Lavande de mer** `#6b4c84` : le seul accent. Soulignement des liens, phrase « Débutantes bienvenues », informations à compléter, contour de focus. Au moins 5:1 sur tous les fonds clairs.
-- **Lavande claire** `#d8c8e6` : le même accent sur fond profond.
+- **Rose poudré, la nappe** (fort) : bande sous les trois pièces du haut, partie « L'atelier », carton « Prochaine exposition ». Sur ce fond, textes, cartels, titres et liens prennent leurs variantes `fort-*`.
+- **Terre cuite du pied** (pied) : fond du pied de page seulement, avec texte clair (pied-texte) et note (pied-doux).
+
+### Tertiary
+- **Ocre** (ocre) : réservé aux informations encore « à compléter », soulignées en tirets.
 
 ### Neutral
-- **Fond porcelaine** `#f7fafa` et **blanc** `#ffffff` (intérieur des cartouches).
-- **Eau claire** `#e5eff0` et **eau** `#cfe1e4` : les deux teintes de bandes.
-- **Encre douce** `#3c5664` : texte secondaire, légendes (5,7:1 au minimum).
-- **Obione** `#6a8873` : uniquement les traits pointillés (lignes de sonde), jamais du texte.
-- **Sur profond** `#e8f1f2` et **sur profond doux** `#c6d8dc` : texte sur fond foncé.
+- **Lin** (fond) : fond général (haut de page, galerie, contact, visionneuse).
+- **Rose clair** (fond-doux) : partie « Rendez-vous ».
+- **Brun encre** (encre) : texte principal, contour clavier, boutons.
+- **Brun doux** (encre-douce) : cartels, légendes, notes, intitulés de fiches.
+- **Filet** (filet) : traits fins entre lignes de listes, fiches et tableau.
+- **Sélection** (selection) et **Survol** (survol) : sélection de texte, fond des boutons au survol.
 
 ### Named Rules
-- **Un seul accent.** La lavande ne se mélange avec aucune autre couleur vive. Pas de dégradé.
-- **Les bandes alternent par aplats francs**, sans ombre ni transition entre elles.
+**La règle Ni blanc ni bleu.** Aucun fond blanc, aucun bleu, nulle part. Demande explicite de l'association (« trop de blanc », « le bleu ne va pas »).
+
+**La règle Couleur = rôle.** Une nouvelle partie prend `fond`, `fond-doux` ou `fond-fort` (avec ses variantes de texte), jamais une couleur nouvelle. Tout texte garde un contraste d'au moins 4,5:1 sur son fond.
+
+**La règle Palette choisie.** La palette lin, rose poudré et terre cuite a été choisie par l'association le 22 novembre 2026 parmi quatre propositions. On ne la change pas sans leur accord.
 
 ## Typography
 
-- **Alegreya** (titres) : un serif calligraphique, humain, proche de la plume. Chiffres alignés (`lining-nums`) pour les dates.
-- **Atkinson Hyperlegible Next** (texte) : conçue pour la lisibilité par le Braille Institute.
-- Les deux sont hébergées dans `fonts/` (aucun appel à Google).
+**Titres :** Newsreader (repli Georgia, Times New Roman), droit et italique, fichiers locaux.
+**Texte :** Atkinson Hyperlegible Next (repli Segoe UI, Arial), fichier local.
+
+**Caractère :** un serif chaleureux et posé pour les noms et les titres, une linéale conçue pour la lisibilité pour tout le reste.
 
 ### Hierarchy
-- Texte courant de 19 à 21 px, interligne 1,6, lignes de 62 caractères au plus.
-- Plus petite taille : 17 px (légendes, intitulés). Jamais en dessous.
-- Titres équilibrés (`text-wrap: balance`), plus d’espace au-dessus d’un sous-titre qu’en dessous.
+- **Titre 1** (400, 48 à 94 px, interligne 0,98) : le nom de l'atelier sur deux lignes, un mot en italique terre cuite.
+- **Titre 2** (400, 38 à 62 px, interligne 1,02) : titres des parties, en terre cuite foncée.
+- **Titre 3** (500, 24 à 28 px, interligne 1,2) : sous-titres, carton du prochain rendez-vous, nom dans le pied.
+- **Nom de pièce** (Newsreader 500, 19 à 22 px) : cartels, légendes de la galerie et de la visionneuse, dates du tableau.
+- **Texte** (400, 19 à 21 px, interligne 1,6, 62 caractères maximum par ligne) : tout le texte courant.
+- **Texte petit** (17 px, interligne 1,4) : cartels, légendes, menu, boutons, en-têtes de tableau.
+- **Intitulé italique** (Newsreader italique 400, 19 px, brun doux) : intitulés des fiches de contact et ligne de lieu de l'accueil.
 
 ### Named Rules
-- **Typographie française** : espaces insécables (`&nbsp;`) avant `: ; ! ?` et dans les guillemets `« »`, apostrophe typographique `’`.
-- Pas de petit sur-titre au-dessus des titres, pas de numéros de section.
+**La règle 19 / 17.** Le texte courant ne descend jamais sous 19 px, les légendes et cartels jamais sous 17 px.
+
+**La règle Un mot en italique.** Seul le grand titre porte un mot en italique coloré. Les autres titres restent droits.
 
 ## Layout
 
-- Une seule page, une colonne de 72 rem au plus, marges latérales de 20 à 48 px.
-- Chaque partie est une **bande** pleine largeur (`.bande`, `.bande--eau-claire`, `.bande--eau`, `.bande--profonde`) ; le contenu est centré dans `.conteneur`.
-- Accueil : texte et image côte à côte à partir de 56 rem ; l’image déborde légèrement sur la ligne de côte.
-- Galerie en colonnes « en mur » (`columns`) : 2 sur téléphone, 3 à partir de 48 rem, 4 à partir de 72 rem. Les photos gardent leurs proportions, rien n’est rogné.
-- Tableau des expositions : chaque ligne devient un petit bloc sous 40 rem.
+Page unique à ancres, contenu centré jusqu'à 90 rem avec une marge latérale de 20 à 64 px. Chaque partie est une bande de couleur pleine largeur, espacée de 64 à 96 px en bas.
+
+Sur ordinateur (dès 960 px), chaque partie suit une grille de 12 colonnes : titre (et sa pièce, qui reste collée en défilant) sur les colonnes 1 à 5, texte sur 7 à 12. En dessous, tout s'empile.
+
+L'accueil : nom à gauche, texte d'entrée à droite (dès 1024 px), puis trois pièces de hauteurs différentes (100 %, 77 %, 58 %) debout sur une même ligne de base. La nappe rose poudré part du tiers bas de la grande pièce et court d'un bord à l'autre de l'écran jusqu'à « L'atelier ». Cartel à droite de chaque pièce dès 1200 px, dessous entre 768 et 1200 px ; sur téléphone, grande pièce à gauche et deux pièces empilées à droite.
+
+La galerie : 2 colonnes sur téléphone, 3 dès 768 px, 4 dès 1152 px. Les photos gardent leurs proportions (rien n'est rogné), alignées par le bas ; une pièce seule en fin de rangée se centre.
 
 ## Elevation & Depth
 
-Aucune ombre. La profondeur vient uniquement des aplats de couleur (l’eau plus ou moins profonde) et des doubles filets. Seule exception : le voile sombre derrière la visionneuse.
+La profondeur vient des fonds de couleur et d'une ombre chaude, brune, réservée aux pièces et aux objets posés (photos, carton, visionneuse). Le reste est plat.
+
+### Shadow Vocabulary
+- **Pièce posée** (`0 2px 4px rgb(58 42 35 / 0.08), 0 18px 36px -12px rgb(58 42 35 / 0.30)`) : toutes les photos de pièces.
+- **Pièce soulevée** (`0 4px 8px rgb(58 42 35 / 0.10), 0 30px 52px -14px rgb(58 42 35 / 0.38)`) : galerie au survol ou au focus, avec un léger soulèvement de 6 px.
+
+### Named Rules
+**La règle Seules les pièces ont une ombre.** Pas d'ombre sur le texte, les titres, les boutons ni les parties.
 
 ## Shapes
 
-- Angles droits partout, sauf les boutons (3 px, à peine adoucis) et les pastilles numérotées des étapes (cercles à double anneau, comme une assiette vue de dessus).
-- **Double filet** : `border` épais + `outline` fin décalé (`outline-offset`). C’est la signature du site.
-- **Ligne de sonde** : trait pointillé obione, pour séparer les lignes de listes et de tableaux.
+Coins doux sur tout ce qui est posé : photos (14 px ; 12 px dans la galerie), carton du prochain rendez-vous (16 px), visionneuse (20 px). Le rayon de référence reste 14 px. Boutons en pilule. Les séparations sont des filets de 1 px ; aucun cadre, aucune bordure décorative.
 
 ## Components
 
-### Buttons
-- `.bouton` : fond profond, texte clair, 52 px de haut au minimum. Au survol, un second filet fin apparaît autour (outline décalé de 4 px).
-- `.bouton--clair` : la version pour fond foncé.
-- `.lien-fort` : lien en gras à côté d’un bouton, même hauteur.
+### Boutons
+- **Forme :** pilule (999 px), contour de 1,5 px de la couleur du texte, fond transparent, hauteur minimale 48 px.
+- **Texte :** Atkinson 17 px, gras.
+- **Survol :** fond brun très léger. **Focus :** contour brun de 3 px décalé de 3 px.
+- Utilisés seulement pour la visionneuse et le bouton « Menu » du téléphone. Jamais de bouton plein, jamais de bouton d'appel.
 
-### Cards / Containers
-- `.cartouche` : fond blanc, filet épais 3 px + filet fin 1 px à 5 px d’écart. Utilisé pour l’image d’accueil, l’assiette de l’atelier et le bloc contact.
-- `.galerie__lien` : mini cartouche autour de chaque photo. Au survol, le filet fin s’écarte et passe en lavande.
+### Pièce et cartel
+- Photo aux coins doux avec l'ombre « pièce posée ».
+- Cartel : le nom de la pièce en Newsreader 500, puis une ligne d'explication en texte petit brun doux.
+
+### Galerie et visionneuse (signature)
+- Au survol ou au focus, la pièce se soulève (6 px, ombre plus profonde, 360 ms, courbe douce).
+- Un clic l'ouvre en grand sur fond lin, voile brun derrière, avec son nom, un compteur et des boutons en contour. Ouverture douce de 280 ms, coupée si l'on préfère moins d'animations.
+
+### Carton « Prochaine exposition »
+- Petit bloc rose poudré, coins doux, ombre chaude légère, titre 3 en terre cuite foncée.
+
+### Listes, fiches et tableau
+- Lignes séparées par des filets fins, comme un inventaire. Fiches de contact : intitulé en italique brun doux, valeur dessous. Tableau des expositions : dates en Newsreader, et sur colonne étroite chaque ligne devient un petit bloc.
 
 ### Navigation
-- Liens de menu de 44 px de haut au minimum, soulignés seulement au survol.
-- Sous 48 rem (téléphone) : les liens se rangent derrière un bouton « Menu » (trois traits + le mot, filet 2 px). Ouvert, les traits deviennent une croix et les liens s’empilent sous l’en-tête, 52 px chacun, séparés par des lignes de sonde. Un lien choisi referme le menu ; Échap aussi. Sans JavaScript, les liens restent affichés (`js/menu.js`, classe `js` posée dans le `<head>`).
-- Liens dans le texte : soulignés en lavande, **double soulignement** au survol.
-- Focus clavier : contour lavande de 3 px, toujours visible.
+- Nom de l'atelier en Newsreader à gauche, liens en Atkinson 17 px demi-gras à droite ; survol en terre cuite souligné. Sur téléphone, les liens se rangent derrière un bouton « Menu » en pilule (trois traits qui deviennent une croix) et s'ouvrent en liste à filets.
 
-### Annuaire (tableau des expositions)
-- Chiffres alignés et à chasse fixe, date en Alegreya grasse, filet épais sous l’en-tête, lignes de sonde entre les rangées.
-- Le prochain rendez-vous est encadré d’un **double filet horizontal** (`border-block: 4px double`).
+### À compléter
+- Toute information inconnue s'affiche « à compléter » en ocre, soulignée en tirets, jusqu'à ce que l'association donne la vraie valeur.
 
-### Visionneuse
-- `<dialog>` natif, ouvert par `js/galerie.js`. Sans JavaScript, le lien ouvre simplement la photo.
-- Boutons Précédente / Fermer / Suivante, flèches du clavier, Échap, clic sur le fond. Le focus revient sur la photo regardée.
-- Ouverture en fondu de 240 ms, désactivée si l’on préfère moins d’animations.
+### Pied de page
+- Fond terre cuite, texte clair ; nom en Newsreader, liens soulignés à demi-opacité, note séparée par un filet clair.
 
 ## Do's and Don'ts
 
 ### Do:
-- Garder un texte foncé sur fond clair, ou clair sur profond, avec un contraste d’au moins 4,5:1.
-- Laisser les photos des pièces faire la couleur du site.
-- Utiliser le double filet et la ligne de sonde pour tout nouveau cadre ou séparateur.
-- Garder les zones cliquables à 44 px de haut au minimum.
+- **Do** utiliser uniquement les rôles de couleur de `css/base.css` (`fond`, `fond-doux`, `fond-fort`, `pied`…).
+- **Do** garder le texte à 19 px minimum, les légendes à 17 px minimum, et un contraste d'au moins 4,5:1.
+- **Do** laisser les photos des pièces faire la décoration, en proportions réelles, coins de 14 px et ombre chaude.
+- **Do** écrire simplement, comme un cartel d'exposition.
+- **Do** laisser visiblement « à compléter » (ocre, tirets) toute information inconnue ; ne rien inventer.
+- **Do** garder des zones cliquables d'au moins 44 px et un contour clavier bien visible.
 
 ### Don't:
-- Pas de deuxième couleur d’accent, pas de dégradé, pas de texte en dégradé.
-- Pas d’ombre portée, pas d’effet verre, pas de cartes à icônes.
-- Pas de bordure colorée à gauche des encadrés.
-- Pas d’animation décorative ni de défilement animé.
-- Pas de photo où l’on reconnaît quelqu’un sans son accord.
+- **Don't** utiliser de blanc ni de bleu, en fond comme en accent.
+- **Don't** prendre un ton publicitaire : pas de bouton d'appel, pas d'étapes numérotées, pas d'étiquette au-dessus des titres.
+- **Don't** faire enfantin ni vieillot : pas d'écriture manuscrite, de touches de peinture, de cadre doré.
+- **Don't** recopier le site Création K (arches, pointillés « couture », Fraunces).
+- **Don't** remplir un bouton de couleur ni ajouter d'ombre hors des pièces.
+- **Don't** changer la palette sans l'accord de l'association.

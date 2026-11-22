@@ -1,9 +1,10 @@
 Polices utilisées sur ce site
 =============================
 
-alegreya.woff2
-  Alegreya, de Juan Pablo del Peral (Huerta Tipográfica).
-  Copyright 2011 The Alegreya Project Authors (https://github.com/huertatipografica/Alegreya)
+newsreader.woff2, newsreader-italique.woff2
+  Newsreader, de Production Type (titres, droit et italique).
+  Copyright 2020 The Newsreader Project Authors (https://github.com/productiontype/Newsreader)
+  Version allégée pour ce site : caractères latins utiles au français.
 
 atkinson-hyperlegible-next.woff2
   Atkinson Hyperlegible Next, créée par le Braille Institute of America.

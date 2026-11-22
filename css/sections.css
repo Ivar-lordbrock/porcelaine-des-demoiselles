@@ -1,257 +1,260 @@
 /* =========================================================
    sections.css — le style de chaque partie de la page
-   (accueil, atelier, nous rejoindre, rendez-vous, contact, mentions)
    ========================================================= */
 
 /* ---------- Accueil ---------- */
 .accueil {
-  --hauteur-cote: clamp(56px, 8vw, 120px);
+  --bas-accueil: clamp(3rem, 1.5rem + 3vw, 4.5rem);
   position: relative;
-  background: var(--eau);
-  padding-top: var(--espace-4);
+  isolation: isolate;
+  overflow-x: clip;
+  padding-block: clamp(1rem, 2.5vw, 2.25rem) var(--bas-accueil);
 }
 
-.accueil__grille {
-  position: relative;
-  z-index: 1;               /* la photo passe devant la ligne de côte */
+/* Le nom à gauche, quelques mots à droite */
+.accueil__inscription {
   display: grid;
-  gap: var(--espace-5);
-  align-items: center;
+  gap: var(--espace-3);
 }
 
-.accueil__texte {
-  padding-bottom: var(--espace-2);
+.accueil__inscription h1 {
+  margin: 0;
 }
 
-.accueil h1 {
-  margin-bottom: var(--espace-2);
-}
-
-.accueil__soustitre {
+.accueil__lieu {
+  margin-bottom: 0.6rem;
   font-family: var(--police-titre);
-  font-size: var(--titre-3);
-  font-weight: 500;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.375rem, 1.2rem + 0.5vw, 1.625rem);
   line-height: 1.3;
-  color: var(--encre-douce);
-  margin-bottom: var(--espace-4);
+  letter-spacing: -0.005em;
 }
 
-.accueil__intro {
-  font-size: calc(var(--texte) * 1.08);
-  max-width: 34ch;
+.accueil__texte p:last-child {
+  margin-bottom: 0;
 }
 
-.accueil__mention {
-  font-weight: 700;
-  color: var(--lavande);
-  max-width: 34ch;
-}
-
-.accueil__image {
-  justify-self: center;
-  width: min(100%, 26rem);
-  --ecart-filet: 6px;
-}
-
-/* La ligne de côte en bas de l'accueil */
-.cote {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: var(--hauteur-cote);
-}
-
-.cote__terre {
-  fill: var(--fond);
-}
-
-.cote__sonde {
-  fill: none;
-  stroke: var(--encre);
-  stroke-opacity: 0.55;
-  stroke-width: 1.5;
-  stroke-dasharray: 1.5 7;
-  stroke-linecap: round;
-  vector-effect: non-scaling-stroke;
-}
-
-@media (min-width: 56rem) {
-  .accueil {
-    padding-top: var(--espace-3);
+@media (min-width: 64rem) {
+  .accueil__inscription {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gouttiere);
+    align-items: end;
   }
 
-  .accueil__grille {
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: var(--espace-4);
+  .accueil__inscription h1 {
+    grid-column: 1 / span 7;
   }
 
   .accueil__texte {
-    padding-bottom: calc(var(--hauteur-cote) + var(--espace-3));
-  }
-
-  .accueil__image {
-    justify-self: end;
-    width: min(100%, 25rem);
-    margin-bottom: calc(var(--hauteur-cote) * -0.35);
+    grid-column: 8 / span 5;
   }
 }
 
-@media (max-width: 55.99rem) {
-  .accueil__grille {
-    padding-bottom: calc(var(--hauteur-cote) * 0.55);
+@media (min-width: 80rem) {
+  .accueil__texte {
+    grid-column: 9 / span 4;
+  }
+}
+
+/* ---------- Les pièces sur la nappe ----------
+   Trois pièces posées côte à côte, chacune avec son cartel.
+   Derrière elles, la nappe rose poudré part du bas des pièces et
+   descend jusqu'à la partie « L'atelier », qui a la même couleur.
+   --h est la hauteur de la grande pièce ; les deux autres en suivent. */
+.accrochage {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--espace-4) var(--espace-2);
+  align-items: center;
+  margin-top: var(--espace-4);
+}
+
+/* La nappe, d'un bord à l'autre de l'écran.
+   Sur téléphone, les trois pièces sont posées dessus. */
+.accrochage::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 3rem;
+  bottom: calc(-1 * var(--bas-accueil));
+  left: calc(50% - 50vw);
+  right: calc(50% - 50vw);
+  background: var(--fort);
+}
+
+.oeuvre img {
+  width: 100%;
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+}
+
+/* Les cartels sont posés sur la nappe : mêmes couleurs que l'aplat */
+.accueil .cartel {
+  color: var(--fort-doux);
+}
+
+.accueil .cartel strong {
+  color: var(--fort-texte);
+}
+
+/* Téléphone : la grande pièce à gauche, les deux autres l'une sous l'autre */
+.oeuvre--grande {
+  grid-row: span 2;
+}
+
+/* Tablette : les trois pièces en rang, posées sur une même ligne, le cartel sous chacune */
+@media (min-width: 48rem) {
+  .accrochage {
+    --h: clamp(18rem, 40vw, 24rem);
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: auto auto;
+    justify-content: space-between;
+    gap: 0 var(--gouttiere);
+  }
+
+  /* La nappe commence au dernier tiers de la grande pièce */
+  .accrochage::before {
+    top: calc(var(--h) * 0.66);
+  }
+
+  .oeuvre {
+    display: grid;
+    grid-row: span 2;
+    grid-template-rows: subgrid;
+  }
+
+  .oeuvre img {
+    align-self: end;
+    width: auto;
+    max-width: none;
+    height: var(--h);
+  }
+
+  .oeuvre--moyenne img { height: calc(var(--h) * 0.77); }
+  .oeuvre--petite img { height: calc(var(--h) * 0.58); }
+
+  /* Le cartel passe à la ligne sous l'image, sans trop la dépasser */
+  .oeuvre .cartel {
+    align-self: start;
+    contain: inline-size;
+    min-width: 9.5rem;
+    margin-top: 1rem;
+  }
+}
+
+/* Ordinateur : le cartel à droite de chaque pièce, en bas, posé sur la nappe */
+@media (min-width: 75rem) {
+  /* La nappe couvre toujours le cartel, même quand les pièces sont petites */
+  .accrochage::before {
+    top: min(calc(var(--h) * 0.66), calc(100% - 9rem));
+  }
+
+  .accrochage {
+    --h: clamp(17rem, 36vw - 8rem, 27rem);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: var(--espace-4);
+    padding-inline-end: clamp(0rem, 2.5vw - 1.5rem, 2rem);
+  }
+
+  .oeuvre {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.25rem;
+  }
+
+  .oeuvre .cartel {
+    flex: none;
+    align-self: flex-end;
+    width: 10.5rem;
+    margin: 0;
+    contain: none;
   }
 }
 
 /* ---------- L'atelier ---------- */
-.atelier {
-  padding-top: calc(var(--espace-section) * 0.9);
-}
-
-.atelier__grille {
-  display: grid;
-  gap: var(--espace-5);
-  align-items: start;
-}
-
-.atelier__image {
-  width: min(100%, 24rem);
-  justify-self: center;
-}
-
-/* Liste séparée par des pointillés, comme des lignes de sonde */
-.liste-sonde {
+/* Liste « Ce que nous peignons » : des lignes fines, comme un inventaire */
+.liste {
   list-style: none;
   max-width: 30rem;
-  border-top: 1px dotted var(--obione);
 }
 
-.liste-sonde li {
+.liste li {
   padding-block: 0.6rem;
-  border-bottom: 1px dotted var(--obione);
+  border-bottom: 1px solid var(--filet);
 }
 
-@media (min-width: 56rem) {
-  .atelier__grille {
-    grid-template-columns: 1.25fr 0.75fr;
-    gap: var(--espace-5) clamp(3rem, 6vw, 6rem);
-  }
-
-  .atelier__image {
-    justify-self: end;
-    margin-top: calc(var(--titre-2) * 1.6);
-  }
-}
-
-/* ---------- Nous rejoindre ---------- */
-.rejoindre h2 {
-  max-width: 18ch;
-}
-
-.rejoindre__intro {
-  font-size: calc(var(--texte) * 1.08);
-  color: var(--sur-profond);
-  max-width: 48ch;
-  margin-bottom: var(--espace-5);
-}
-
-/* Les trois étapes, numérotées dans l'ordre */
-.etapes {
-  list-style: none;
-  counter-reset: etape;
-  display: grid;
-  gap: var(--espace-4);
-}
-
-.etape {
-  counter-increment: etape;
-  position: relative;
-  padding-top: var(--espace-3);
-  border-top: 1px dotted var(--sur-profond-doux);
-}
-
-.etape::before {
-  content: counter(etape);
-  display: grid;
-  place-items: center;
-  width: 3rem;
-  height: 3rem;
-  margin-bottom: var(--espace-2);
-  border: 2px solid var(--lavande-claire);
-  border-radius: 50%;
-  outline: 1px solid var(--lavande-claire);
-  outline-offset: 3px;
-  font-family: var(--police-titre);
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--blanc);
-}
-
-.etape p {
-  color: var(--sur-profond-doux);
-  margin-bottom: 0;
-}
-
-.rejoindre .actions {
-  margin-top: var(--espace-5);
-}
-
-@media (min-width: 60rem) {
-  .etapes {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--espace-5);
-  }
+.liste li:first-child {
+  border-top: 1px solid var(--filet);
 }
 
 /* ---------- Rendez-vous ---------- */
-.rendez-vous__intro {
-  margin-bottom: var(--espace-4);
+/* Prochaine exposition : un petit carton de la couleur forte */
+.prochain {
+  display: grid;
+  gap: 0.4rem;
+  max-width: 30rem;
+  margin: 0;
+  padding: clamp(1.25rem, 1rem + 1vw, 1.75rem) clamp(1.25rem, 1rem + 1.2vw, 2rem);
+  border-radius: 16px;
+  background: var(--fort);
+  color: var(--fort-texte);
+  box-shadow: 0 1px 2px rgb(40 24 18 / 0.08), 0 14px 30px -14px rgb(40 24 18 / 0.32);
 }
 
-/* Le prochain rendez-vous : une ligne encadrée d'un double filet */
-.prochain {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: var(--espace-1) var(--espace-3);
-  max-width: none;
-  padding-block: var(--espace-3);
-  border-block: 4px double var(--encre);
+.prochain a,
+.prochain a:hover {
+  color: var(--fort-lien);
+}
+
+.prochain :focus-visible {
+  outline-color: var(--fort-texte);
 }
 
 .prochain__titre {
   font-family: var(--police-titre);
+  font-weight: 500;
   font-size: var(--titre-3);
-  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--fort-titre);
 }
 
-/* Tableau des expositions, façon annuaire des marées */
+/* Tableau des expositions : des lignes identiques, séparées par un trait fin */
 .annuaire {
   width: 100%;
-  max-width: 52rem;
   border-collapse: collapse;
-  font-variant-numeric: lining-nums tabular-nums;
+  font-variant-numeric: tabular-nums lining-nums;
 }
 
 .annuaire th {
   padding: 0 var(--espace-2) var(--espace-1) 0;
-  font-size: var(--texte-petit);
+  border-bottom: 1.5px solid var(--encre);
   font-weight: 700;
+  font-size: var(--texte-petit);
   color: var(--encre-douce);
   text-align: left;
-  border-bottom: 2px solid var(--encre);
 }
 
 .annuaire td {
-  padding: 0.8rem var(--espace-2) 0.8rem 0;
-  border-bottom: 1px dotted var(--obione);
+  padding: 0.85rem var(--espace-2) 0.85rem 0;
+  border-bottom: 1px solid var(--filet);
   vertical-align: top;
 }
 
+/* La date dans la police des titres, l'événement sans coupure au tiret */
 .annuaire td:first-child {
   font-family: var(--police-titre);
-  font-weight: 700;
+  font-weight: 500;
+  font-size: 1.125em;
+  line-height: 1.45;
+  white-space: nowrap;
+}
+
+.annuaire td:nth-child(2) {
   white-space: nowrap;
 }
 
@@ -260,8 +263,13 @@
   color: var(--encre-douce);
 }
 
-/* Sur petit écran, chaque ligne du tableau devient un petit bloc */
-@media (max-width: 40rem) {
+/* Quand la colonne est trop étroite pour le tableau (téléphone, petit ordinateur),
+   chaque ligne du tableau devient un petit bloc */
+.partie__corps--tableau {
+  container-type: inline-size;
+}
+
+@container (max-width: 36rem) {
   .annuaire thead {
     position: absolute;
     width: 1px;
@@ -272,12 +280,12 @@
 
   .annuaire tr {
     display: block;
-    padding-block: 0.8rem;
-    border-bottom: 1px dotted var(--obione);
+    padding-block: 0.85rem;
+    border-bottom: 1px solid var(--filet);
   }
 
   .annuaire tbody tr:first-child {
-    border-top: 2px solid var(--encre);
+    border-top: 1.5px solid var(--encre);
   }
 
   .annuaire td {
@@ -285,75 +293,53 @@
     padding: 0;
     border: 0;
   }
-
-  .annuaire td:last-child {
-    color: var(--encre-douce);
-  }
 }
 
-/* ---------- Infos pratiques et contact ---------- */
-.contact__grille {
-  display: grid;
-  gap: var(--espace-5);
-  align-items: start;
+/* ---------- Contact ---------- */
+.contact__bloc + .contact__bloc {
+  margin-top: var(--espace-5);
 }
 
-.contact__bloc.cartouche {
-  --ecart-filet: 5px;
-  padding: clamp(1.25rem, 3vw, 2.25rem);
-}
-
-.contact__bloc:not(.cartouche) {
-  padding-top: clamp(1.25rem, 3vw, 2.25rem);
-}
-
-/* Liste « intitulé : valeur » séparée par des pointillés */
 .fiche {
   margin: 0;
 }
 
 .fiche > div {
   padding-block: 0.85rem;
-  border-bottom: 1px dotted var(--obione);
+  border-bottom: 1px solid var(--filet);
 }
 
 .fiche > div:first-child {
-  border-top: 1px dotted var(--obione);
+  border-top: 1px solid var(--filet);
 }
 
+/* L'intitulé en italique, comme une étiquette écrite à la main */
 .fiche dt {
-  font-size: var(--texte-petit);
-  font-weight: 700;
+  font-family: var(--police-titre);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.1875rem;
+  line-height: 1.3;
   color: var(--encre-douce);
 }
 
 .fiche dd {
   margin: 0.15rem 0 0;
-  overflow-wrap: anywhere;
 }
 
-.fiche a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.75rem;
-  font-weight: 700;
-}
-
-@media (min-width: 56rem) {
-  .contact__grille {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--espace-5) clamp(3rem, 6vw, 6rem);
-  }
-}
-
-/* ---------- Page des mentions légales ---------- */
+/* ---------- Mentions légales ---------- */
 .mentions h1 {
   font-size: var(--titre-2);
+  line-height: 1;
+  letter-spacing: -0.02em;
   margin-bottom: var(--espace-4);
 }
 
 .prose h2 {
   font-size: var(--titre-3);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
   margin: var(--espace-4) 0 var(--espace-1);
 }
 

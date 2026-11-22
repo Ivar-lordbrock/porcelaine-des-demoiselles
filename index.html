@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Porcelaine des Demoiselles · Atelier de peinture sur porcelaine à Port-des-Barques</title>
-  <meta name="description" content="Atelier associatif de peinture sur porcelaine à Port-des-Barques (Charente-Maritime). Une dizaine de copines qui apprennent ensemble. Débutantes bienvenues : rejoignez-nous !">
-  <meta name="theme-color" content="#cfe1e4">
+  <meta name="description" content="Atelier associatif de peinture sur porcelaine à Port-des-Barques (Charente-Maritime). Une dizaine d’amies qui peignent à la main et apprennent ensemble. Débutantes bienvenues.">
+  <meta name="theme-color" content="#f2e9de">
 
   <!-- Polices hébergées sur le site (aucun appel extérieur) -->
-  <link rel="preload" href="./fonts/alegreya.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./fonts/atkinson-hyperlegible-next.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Signale que JavaScript marche : le menu se replie alors derrière le bouton « Menu » sur téléphone -->
@@ -28,14 +28,7 @@
   <!-- ============ EN-TÊTE ============ -->
   <header class="entete">
     <div class="conteneur entete__interieur">
-      <a class="marque" href="./index.html">
-        <svg class="marque__signe" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-          <circle cx="32" cy="32" r="27" fill="none" stroke="currentColor" stroke-width="4"/>
-          <circle cx="32" cy="32" r="20.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
-          <circle cx="32" cy="32" r="6" class="marque__point"/>
-        </svg>
-        <span>Porcelaine des Demoiselles</span>
-      </a>
+      <a class="marque" href="./index.html">Porcelaine des Demoiselles</a>
       <!-- Bouton « Menu », visible seulement sur téléphone (géré par js/menu.js) -->
       <button class="menu-bouton" type="button" aria-expanded="false" aria-controls="navigation-principale">
         <span class="menu-bouton__icone" aria-hidden="true"></span>
@@ -44,7 +37,6 @@
       <nav class="navigation" id="navigation-principale" aria-label="Navigation principale">
         <ul>
           <li><a href="#atelier">L’atelier</a></li>
-          <li><a href="#rejoindre">Nous rejoindre</a></li>
           <li><a href="#galerie">Nos pièces</a></li>
           <li><a href="#rendez-vous">Rendez-vous</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -57,94 +49,78 @@
 
     <!-- ============ ACCUEIL ============ -->
     <section class="accueil" aria-labelledby="titre-accueil">
-      <div class="conteneur accueil__grille">
-        <div class="accueil__texte">
-          <h1 id="titre-accueil">Porcelaine des Demoiselles</h1>
-          <p class="accueil__soustitre">Atelier de peinture sur porcelaine à Port-des-Barques</p>
-          <p class="accueil__intro">Une dizaine de copines se retrouvent pour peindre assiettes, plateaux et tasses, et apprennent ensemble.</p>
-          <p class="accueil__mention">Débutantes bienvenues&nbsp;: la peinture sur porcelaine est à la portée de toutes.</p>
-          <div class="actions">
-            <a class="bouton" href="#rejoindre">Nous rejoindre</a>
-            <a class="lien-fort" href="#galerie">Voir nos pièces</a>
+      <div class="conteneur">
+        <div class="accueil__inscription">
+          <h1 id="titre-accueil">Porcelaine des <em>Demoiselles</em></h1>
+          <div class="accueil__texte">
+            <p class="accueil__lieu">Atelier de peinture sur porcelaine à <span class="sans-coupure">Port-des-Barques</span></p>
+            <p>Une dizaine d’amies se retrouvent pour peindre à la main assiettes, plateaux, tasses et vases. Elles apprennent ensemble, en se montrant leurs essais. On peut commencer sans savoir dessiner.</p>
           </div>
         </div>
 
-        <figure class="accueil__image cartouche">
-          <img src="./images/site/accueil-rouge-gorge.jpg" width="992" height="1400"
-               alt="Plateau rectangulaire peint.">
-          <figcaption>Plateau</figcaption>
-        </figure>
+        <!-- Les trois pièces posées sur la nappe, sur une même ligne, chacune avec son cartel.
+             Pour changer une pièce : changer src, width, height, alt et le texte du cartel. -->
+        <div class="accrochage">
+          <figure class="oeuvre oeuvre--grande">
+            <img src="./images/galerie/plateau-long-geisha.jpg" width="672" height="1400"
+                 alt="Plateau long et étroit peint d’une dame japonaise en kimono rose.">
+            <figcaption class="cartel"><strong>Plateau long, dame japonaise</strong> Peinture à la main sur porcelaine</figcaption>
+          </figure>
+          <figure class="oeuvre oeuvre--moyenne">
+            <img src="./images/galerie/abat-jour-papillons.jpg" width="720" height="960"
+                 alt="Vase en porcelaine peint de papillons orangés.">
+            <figcaption class="cartel"><strong>Vase aux papillons</strong> Peinture à la main sur porcelaine</figcaption>
+          </figure>
+          <figure class="oeuvre oeuvre--petite">
+            <img src="./images/galerie/assiette-iris.jpg" width="1050" height="1400"
+                 alt="Assiette blanche peinte de grands iris bleus et verts.">
+            <figcaption class="cartel"><strong>Assiette aux iris</strong> Peinture à la main sur porcelaine</figcaption>
+          </figure>
+        </div>
       </div>
-
-      <!-- La ligne de côte : une seule courbe ferme le haut de page -->
-      <svg class="cote" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-        <path class="cote__sonde" d="M0,46 C180,78 320,22 520,40 C720,58 860,90 1060,66 C1220,46 1340,18 1440,30"/>
-        <path class="cote__terre" d="M0,66 C180,98 320,42 520,60 C720,78 860,110 1060,86 C1220,66 1340,38 1440,50 L1440,120 L0,120 Z"/>
-      </svg>
     </section>
 
     <!-- ============ L'ATELIER ============ -->
-    <section class="bande atelier" id="atelier" aria-labelledby="titre-atelier">
-      <div class="conteneur atelier__grille">
-        <div class="atelier__texte">
-          <h2 id="titre-atelier">Un atelier entre copines</h2>
-          <p>La Porcelaine des Demoiselles est l’une des associations de Port-des-Barques, notre petite cité balnéaire de Charente-Maritime. Le groupe réunit une dizaine de «&nbsp;créatrices en herbe&nbsp;».</p>
-          <p>On y découvre la peinture sur porcelaine blanche&nbsp;: fleurs, oiseaux, personnages, paysages… Chacune choisit ses motifs et avance à son rythme. On apprend les unes des autres, en partageant astuces et conseils.</p>
-          <p>Tout au long de l’année, nous montrons nos pièces lors d’expositions-ventes. Ce sont aussi de beaux moments de partage, entre nous et avec les visiteurs.</p>
+    <section class="partie fond-fort" id="atelier" aria-labelledby="titre-atelier">
+      <!-- Sur ordinateur : le titre et la pièce à gauche, le texte à droite -->
+      <div class="conteneur partie__grille">
+        <h2 class="partie__titre" id="titre-atelier">L’atelier</h2>
+        <div class="partie__corps">
+          <p>La Porcelaine des Demoiselles est une association de Port-des-Barques, notre petite cité balnéaire de Charente-Maritime. Nous sommes une dizaine de «&nbsp;créatrices en herbe&nbsp;», réunies par le goût de la peinture sur porcelaine.</p>
+          <p>On part d’une pièce blanche, et tout se fait au pinceau&nbsp;: fleurs, oiseaux, personnages, paysages… Chacune choisit ses motifs et avance à son rythme. On se montre ses essais, on se passe les astuces, et on apprend les unes des autres.</p>
+          <p>Chaque pièce est peinte à la main, du premier trait au dernier. Aucune n’est tout à fait pareille à une autre.</p>
 
           <h3>Ce que nous peignons</h3>
-          <ul class="liste-sonde">
+          <ul class="liste">
             <li>Assiettes et plats</li>
             <li>Plateaux</li>
             <li>Tasses et soucoupes</li>
             <li>Coupelles et petites boîtes</li>
             <li>Vases</li>
           </ul>
+
+          <h3 id="rejoindre">Venir peindre avec nous</h3>
+          <p>Le groupe accueille volontiers de nouvelles membres, débutantes comprises&nbsp;: pas besoin de savoir dessiner pour commencer. Le plus simple est de <a href="#contact">nous écrire</a>, ou de venir nous voir à une <a href="#rendez-vous">exposition-vente</a>.</p>
         </div>
 
-        <figure class="atelier__image cartouche">
+        <figure class="partie__piece">
           <img src="./images/galerie/assiette-les-copines.jpg" width="1200" height="1138" loading="lazy"
                alt="Assiette carrée peinte de trois jeunes femmes souriantes, avec l’inscription « Les copines ».">
-          <figcaption>«&nbsp;Les copines&nbsp;», une assiette qui nous ressemble</figcaption>
+          <figcaption class="cartel"><strong>«&nbsp;Les copines&nbsp;»</strong> Une assiette qui nous ressemble</figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- ============ NOUS REJOINDRE ============ -->
-    <section class="bande bande--profonde rejoindre" id="rejoindre" aria-labelledby="titre-rejoindre">
-      <div class="conteneur">
-        <h2 id="titre-rejoindre">Nous accueillons de nouvelles adhérentes</h2>
-        <p class="rejoindre__intro">Vous aimez les couleurs, les jolies choses et les moments entre amies&nbsp;? Pas besoin de savoir dessiner&nbsp;: on apprend ensemble, pas à pas, dans la bonne humeur.</p>
-
-        <!-- Les trois étapes : textes à adapter si besoin -->
-        <ol class="etapes">
-          <li class="etape">
-            <h3>Prenez contact</h3>
-            <p>Écrivez-nous, appelez-nous ou laissez un message sur notre groupe Facebook.</p>
-          </li>
-          <li class="etape">
-            <h3>Venez nous rencontrer</h3>
-            <p>Passez voir l’atelier ou retrouvez-nous lors d’une exposition-vente pour découvrir nos pièces et poser vos questions.</p>
-          </li>
-          <li class="etape">
-            <h3>Lancez-vous</h3>
-            <p>Choisissez votre premier motif&nbsp;: nous vous montrons les premiers gestes et partageons nos astuces.</p>
-          </li>
-        </ol>
-
-        <div class="actions">
-          <a class="bouton bouton--clair" href="#contact">Nous contacter</a>
-          <a class="lien-fort" href="https://www.facebook.com/groups/818583442289298" rel="noopener">Écrire sur notre groupe Facebook</a>
-        </div>
-      </div>
-    </section>
-
     <!-- ============ GALERIE ============ -->
-    <!-- Pour ajouter une photo : copier un bloc <figure> ... </figure> (voir README.md) -->
-    <section class="bande galerie-section" id="galerie" aria-labelledby="titre-galerie">
+    <!-- Pour ajouter une photo : copier un bloc <figure> ... </figure> (voir README.md). -->
+    <section class="partie" id="galerie" aria-labelledby="titre-galerie">
       <div class="conteneur">
-        <h2 id="titre-galerie">Nos pièces</h2>
-        <p class="galerie-section__intro">Quelques réalisations des membres, photographiées lors de nos expositions. Touchez ou cliquez sur une photo pour l’agrandir.</p>
+        <div class="partie__grille">
+          <h2 class="partie__titre" id="titre-galerie">Nos pièces</h2>
+          <div class="partie__corps">
+            <p class="partie__intro">Quelques pièces peintes par les membres, photographiées lors de nos expositions. Touchez ou cliquez sur une photo pour la voir en grand.</p>
+          </div>
+        </div>
 
         <div class="galerie">
           <figure class="galerie__item">
@@ -274,101 +250,98 @@
             </a>
             <figcaption>Assiette à l’oiseau d’eau</figcaption>
           </figure>
-
-          <figure class="galerie__item">
-            <a class="galerie__lien" href="./images/galerie/assiette-les-copines.jpg">
-              <img src="./images/galerie/assiette-les-copines.jpg" width="1200" height="1138" loading="lazy"
-                   alt="Assiette carrée peinte de trois jeunes femmes souriantes, avec l’inscription « Les copines ».">
-            </a>
-            <figcaption>Assiette «&nbsp;Les copines&nbsp;»</figcaption>
-          </figure>
         </div>
       </div>
     </section>
 
     <!-- ============ RENDEZ-VOUS ============ -->
-    <section class="bande bande--eau-claire rendez-vous" id="rendez-vous" aria-labelledby="titre-rendez-vous">
-      <div class="conteneur">
-        <h2 id="titre-rendez-vous">Nos rendez-vous</h2>
-        <p class="rendez-vous__intro">Au printemps et à l’automne, nous exposons et vendons nos pièces à la salle des fêtes de Port-des-Barques. C’est le meilleur moment pour venir nous rencontrer.</p>
+    <section class="partie fond-doux" id="rendez-vous" aria-labelledby="titre-rendez-vous">
+      <div class="conteneur partie__grille">
+        <h2 class="partie__titre" id="titre-rendez-vous">Rendez-vous</h2>
 
-        <!-- PROCHAIN RENDEZ-VOUS : remplacer la phrase ci-dessous quand une date est connue.
-             Exemple : <strong>Exposition-vente</strong> samedi 2 mai 2027, 10 h – 17 h, salle des fêtes de Port-des-Barques -->
-        <p class="prochain">
-          <span class="prochain__titre">Prochain rendez-vous</span>
-          <span class="prochain__texte">Date à venir&nbsp;: elle sera annoncée sur notre <a href="https://www.facebook.com/groups/818583442289298" rel="noopener">groupe Facebook</a>.</span>
-        </p>
+        <div class="partie__cote">
+          <p class="partie__intro">Au printemps et à l’automne, nous exposons nos pièces à la salle des fêtes de Port-des-Barques. On peut les voir de près, les acheter, et parler peinture avec nous.</p>
 
-        <h3>Nos dernières expositions</h3>
-        <!-- Ajouter une ligne <tr> en haut du tableau pour chaque nouvel événement -->
-        <table class="annuaire">
-          <thead>
-            <tr>
-              <th scope="col">Date</th>
-              <th scope="col">Événement</th>
-              <th scope="col">Lieu</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>21 et 22 nov. 2026</td>
-              <td>Exposition-vente</td>
-              <td>Salle des fêtes, Port-des-Barques</td>
-            </tr>
-            <tr>
-              <td>1<sup>er</sup> et 2 nov. 2025</td>
-              <td>Exposition-vente</td>
-              <td>Salle des fêtes, Port-des-Barques</td>
-            </tr>
-            <tr>
-              <td>3 et 4 mai 2025</td>
-              <td>Exposition-vente</td>
-              <td>Salle des fêtes, Port-des-Barques</td>
-            </tr>
-            <tr>
-              <td>29 nov. 2020</td>
-              <td>Marché de Noël</td>
-              <td>Salle polyvalente, Port-des-Barques</td>
-            </tr>
-          </tbody>
-        </table>
-        <p class="note">Horaires habituels des expositions&nbsp;: le samedi de 10 h à 17 h, le dimanche de 10 h à 15 h.</p>
+          <!-- PROCHAIN RENDEZ-VOUS : remplacer la phrase ci-dessous quand une date est connue.
+               Exemple : <strong>Exposition-vente</strong> samedi 2 mai 2027, 10 h – 17 h, salle des fêtes de Port-des-Barques -->
+          <p class="prochain">
+            <span class="prochain__titre">Prochaine exposition</span>
+            <span class="prochain__texte">Date à venir&nbsp;: elle sera annoncée sur notre <a href="https://www.facebook.com/groups/818583442289298" rel="noopener">groupe Facebook</a>.</span>
+          </p>
+        </div>
+
+        <div class="partie__corps partie__corps--tableau">
+          <h3>Les expositions passées</h3>
+          <!-- Ajouter une ligne <tr> en haut du tableau pour chaque nouvel événement -->
+          <table class="annuaire">
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Événement</th>
+                <th scope="col">Lieu</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>21 et 22 nov. 2026</td>
+                <td>Exposition-vente</td>
+                <td>Salle des fêtes, <span class="sans-coupure">Port-des-Barques</span></td>
+              </tr>
+              <tr>
+                <td>1<sup>er</sup> et 2 nov. 2025</td>
+                <td>Exposition-vente</td>
+                <td>Salle des fêtes, <span class="sans-coupure">Port-des-Barques</span></td>
+              </tr>
+              <tr>
+                <td>3 et 4 mai 2025</td>
+                <td>Exposition-vente</td>
+                <td>Salle des fêtes, <span class="sans-coupure">Port-des-Barques</span></td>
+              </tr>
+              <tr>
+                <td>29 nov. 2020</td>
+                <td>Marché de Noël</td>
+                <td>Salle polyvalente, <span class="sans-coupure">Port-des-Barques</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="note">Horaires habituels des expositions&nbsp;: le samedi de 10&nbsp;h à 17&nbsp;h, le dimanche de 10&nbsp;h à 15&nbsp;h.</p>
+        </div>
       </div>
     </section>
 
     <!-- ============ INFOS PRATIQUES ET CONTACT ============ -->
     <!-- Les mentions « à compléter » sont à remplacer par les vraies informations (voir README.md) -->
-    <section class="bande bande--eau contact" id="contact" aria-labelledby="titre-contact">
-      <div class="conteneur">
-        <h2 id="titre-contact">Infos pratiques et contact</h2>
+    <section class="partie" id="contact" aria-labelledby="titre-contact">
+      <div class="conteneur partie__grille">
+        <h2 class="partie__titre" id="titre-contact">Contact</h2>
 
-        <div class="contact__grille">
-          <div class="cartouche contact__bloc">
-            <h3>Nous contacter</h3>
-            <dl class="fiche">
-              <div>
-                <dt>Par e-mail</dt>
-                <dd>
-                  <span class="a-completer">Adresse à compléter</span>
-                  <!-- Remplacer la ligne ci-dessus par :
-                  <a href="mailto:votre.adresse@exemple.fr">votre.adresse@exemple.fr</a> -->
-                </dd>
-              </div>
-              <div>
-                <dt>Par téléphone</dt>
-                <dd>
-                  <span class="a-completer">Numéro à compléter</span>
-                  <!-- Remplacer la ligne ci-dessus par (numéro sans espaces dans href) :
-                  <a href="tel:+33600000000">06 00 00 00 00</a> -->
-                </dd>
-              </div>
-              <div>
-                <dt>Sur Facebook</dt>
-                <dd><a href="https://www.facebook.com/groups/818583442289298" rel="noopener">Groupe «&nbsp;Porcelaine des Demoiselles&nbsp;»</a></dd>
-              </div>
-            </dl>
-          </div>
+        <div class="contact__bloc partie__cote">
+          <h3>Nous écrire</h3>
+          <dl class="fiche">
+            <div>
+              <dt>Par e-mail</dt>
+              <dd>
+                <span class="a-completer">Adresse à compléter</span>
+                <!-- Remplacer la ligne ci-dessus par :
+                <a href="mailto:votre.adresse@exemple.fr">votre.adresse@exemple.fr</a> -->
+              </dd>
+            </div>
+            <div>
+              <dt>Par téléphone</dt>
+              <dd>
+                <span class="a-completer">Numéro à compléter</span>
+                <!-- Remplacer la ligne ci-dessus par (numéro sans espaces dans href) :
+                <a href="tel:+33600000000">06 00 00 00 00</a> -->
+              </dd>
+            </div>
+            <div>
+              <dt>Sur Facebook</dt>
+              <dd><a href="https://www.facebook.com/groups/818583442289298" rel="noopener">Groupe «&nbsp;Porcelaine des Demoiselles&nbsp;»</a></dd>
+            </div>
+          </dl>
+        </div>
 
+        <div class="partie__corps partie__corps--bas">
           <div class="contact__bloc">
             <h3>L’atelier en pratique</h3>
             <dl class="fiche">
@@ -405,9 +378,10 @@
         <li><a href="https://www.facebook.com/groups/818583442289298" rel="noopener">Groupe Facebook</a></li>
         <li><a href="#contenu">Haut de page</a></li>
       </ul>
-      <p class="pied__note">Toutes les pièces présentées ont été peintes par les membres de l’atelier.</p>
+      <p class="pied__note">Toutes les pièces présentées ont été peintes à la main par les membres de l’atelier.</p>
     </div>
   </footer>
+
 
   <!-- Visionneuse de photos (utilisée par js/galerie.js) -->
   <dialog class="visionneuse" id="visionneuse" aria-label="Photo agrandie">
@@ -420,9 +394,9 @@
         </figcaption>
       </figure>
       <div class="visionneuse__commandes">
-        <button type="button" class="bouton bouton--trait" data-action="precedente">Précédente</button>
+        <button type="button" class="bouton" data-action="precedente">Précédente</button>
         <button type="button" class="bouton" data-action="fermer">Fermer</button>
-        <button type="button" class="bouton bouton--trait" data-action="suivante">Suivante</button>
+        <button type="button" class="bouton" data-action="suivante">Suivante</button>
       </div>
     </div>
   </dialog>
