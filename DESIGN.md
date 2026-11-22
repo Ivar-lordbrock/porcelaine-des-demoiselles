@@ -197,7 +197,7 @@ Coins doux sur tout ce qui est posé : photos (14 px ; 12 px dans la galerie), c
 - Cartel : le nom de la pièce en Newsreader 500, puis une ligne d'explication en texte petit brun doux.
 
 ### Galerie et visionneuse (signature)
-- La rangée s'arrête sur une pièce (accroche au début de chaque pièce). Les boutons de défilement sont en contour ; au début ou à la fin de la rangée, le bouton inutile pâlit. Sans JavaScript, les boutons disparaissent et la rangée défile quand même.
+- La rangée s'arrête sur une pièce (accroche au début de chaque pièce). Les boutons de défilement sont en contour et toujours actifs : au bout de la rangée, « Suivantes » revient à la première pièce ; au début, « Précédentes » va à la dernière. Sans JavaScript, les boutons disparaissent et la rangée défile quand même.
 - Au survol ou au focus, la pièce se soulève (6 px, ombre plus profonde, 360 ms, courbe douce).
 - Un clic l'ouvre en grand sur fond lin, voile brun derrière, avec son nom, un compteur et des boutons en contour. Ouverture douce de 280 ms, coupée si l'on préfère moins d'animations.
 

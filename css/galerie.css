@@ -33,6 +33,7 @@
   display: grid;
   grid-template-rows: var(--h) auto;
   flex: none;
+  min-width: 8rem; /* tant que la photo n'est pas chargée, la légende garde de la place */
   scroll-snap-align: start;
 }
 
@@ -78,15 +79,6 @@
 
 .galerie__fleche {
   gap: 0.5rem;
-}
-
-.galerie__fleche[aria-disabled="true"] {
-  opacity: 0.4;
-  cursor: default;
-}
-
-.galerie__fleche[aria-disabled="true"]:hover {
-  background: transparent;
 }
 
 /* Survol ou clavier : on soulève un peu la pièce de la table */

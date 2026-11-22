@@ -6,7 +6,9 @@
    Rien à modifier ici pour ajouter une photo.
    ========================================================= */
 
-// Les boutons « Précédentes » et « Suivantes » sous la rangée
+// Les boutons « Précédentes » et « Suivantes » sous la rangée.
+// Ils marchent toujours : au bout de la rangée, « Suivantes » revient
+// à la première pièce ; au début, « Précédentes » va à la dernière.
 (function () {
   var rangee = document.getElementById("galerie-rangee");
   var boutons = Array.prototype.slice.call(document.querySelectorAll(".galerie__fleche"));
@@ -14,29 +16,24 @@
 
   var douceur = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
 
-  // Un bouton est grisé quand on est déjà au début (ou à la fin) de la rangée.
-  function mettreAJour() {
-    var fin = rangee.scrollWidth - rangee.clientWidth - 2;
-    boutons.forEach(function (bouton) {
-      var versLaFin = bouton.getAttribute("data-sens") === "1";
-      var bloque = versLaFin ? rangee.scrollLeft >= fin : rangee.scrollLeft <= 2;
-      bouton.setAttribute("aria-disabled", bloque ? "true" : "false");
-    });
-  }
-
   boutons.forEach(function (bouton) {
     bouton.addEventListener("click", function () {
-      if (bouton.getAttribute("aria-disabled") === "true") return;
-      // On avance d'à peu près une largeur d'écran de pièces.
-      var pas = Math.max(rangee.clientWidth * 0.8, 200);
-      rangee.scrollBy({ left: Number(bouton.getAttribute("data-sens")) * pas, behavior: douceur });
+      var sens = Number(bouton.getAttribute("data-sens"));
+      var fin = rangee.scrollWidth - rangee.clientWidth;
+      var position = rangee.scrollLeft;
+      var cible;
+
+      if (sens > 0 && position >= fin - 2) {
+        cible = 0;                       // au bout : retour au début
+      } else if (sens < 0 && position <= 2) {
+        cible = fin;                     // au début : on va au bout
+      } else {
+        // sinon, on avance d'à peu près une largeur d'écran de pièces
+        cible = position + sens * Math.max(rangee.clientWidth * 0.8, 200);
+      }
+      rangee.scrollTo({ left: cible, behavior: douceur });
     });
   });
-
-  rangee.addEventListener("scroll", mettreAJour, { passive: true });
-  window.addEventListener("resize", mettreAJour);
-  window.addEventListener("load", mettreAJour);
-  mettreAJour();
 })();
 
 // La visionneuse : la photo en grand, avec son nom
