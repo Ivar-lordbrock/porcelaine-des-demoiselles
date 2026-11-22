@@ -2,55 +2,38 @@
    galerie.css — la table des pièces et la visionneuse (photo agrandie)
    ========================================================= */
 
-/* Les pièces gardent leurs proportions (rien n'est rogné)
-   et chaque rangée est centrée sur une même ligne.
-   2 colonnes sur téléphone, 3 sur tablette, 4 sur grand écran. */
+/* Toutes les pièces sont posées sur une même ligne, comme sur la table
+   de l'exposition, et la rangée défile de côté : au doigt, à la souris,
+   avec les flèches du clavier ou avec les boutons dessous.
+   Les photos gardent leurs proportions (rien n'est rogné).
+   --h est la hauteur réservée aux photos. */
 .galerie {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(2.5rem, 1.5rem + 3vw, 4.5rem) clamp(1rem, 0.25rem + 2.5vw, 3rem);
-  align-items: end;
+  --h: clamp(15rem, 9rem + 16vw, 24rem);
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(1.5rem, 0.75rem + 2.5vw, 3rem);
   margin-top: var(--espace-5);
+  /* La rangée va jusqu'au bord de l'écran ; la première pièce reste alignée sur le titre */
+  margin-inline: calc(-1 * var(--marge));
+  padding: 1rem var(--marge) 1.25rem;
+  scroll-padding-inline: var(--marge);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--encre-douce) 55%, transparent) transparent;
 }
 
-/* Une pièce seule sur la dernière rangée se place au milieu */
-.galerie__item:last-child:nth-child(2n + 1) {
-  grid-column: 1 / -1;
+.galerie:focus-visible {
+  outline-offset: -3px;
 }
 
-@media (min-width: 48rem) {
-  .galerie {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .galerie__item:last-child:nth-child(2n + 1) {
-    grid-column: auto;
-  }
-
-  .galerie__item:last-child:nth-child(3n + 1) {
-    grid-column: 1 / -1;
-  }
-}
-
-@media (min-width: 72rem) {
-  .galerie {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .galerie__item:last-child:nth-child(3n + 1) {
-    grid-column: auto;
-  }
-
-  .galerie__item:last-child:nth-child(4n + 1) {
-    grid-column: 1 / -1;
-  }
-}
-
-/* Chaque pièce prend la largeur de sa photo ; sa légende passe à la ligne dessous */
+/* Chaque pièce : la photo debout en bas de sa place, la légende dessous */
 .galerie__item {
-  width: fit-content;
-  max-width: 100%;
-  margin-inline: auto;
+  display: grid;
+  grid-template-rows: var(--h) auto;
+  flex: none;
+  scroll-snap-align: start;
 }
 
 .galerie__item figcaption {
@@ -64,6 +47,8 @@
 }
 
 .galerie__lien {
+  align-self: end;
+  justify-self: start;
   display: block;
   border-radius: 12px;
   cursor: zoom-in;
@@ -71,10 +56,36 @@
 
 .galerie__lien img {
   width: auto;
-  max-height: min(26rem, 70vh);
+  height: auto;
+  max-height: var(--h);
+  max-width: min(78vw, 40rem);
   border-radius: 12px;
   box-shadow: var(--ombre);
   transition: transform 360ms var(--douceur), box-shadow 360ms var(--douceur);
+}
+
+/* Les boutons « Précédentes » et « Suivantes » (seulement avec JavaScript) */
+.galerie__commandes {
+  display: none;
+  gap: var(--espace-2);
+  margin-top: var(--espace-3);
+}
+
+.js .galerie__commandes {
+  display: flex;
+}
+
+.galerie__fleche {
+  gap: 0.5rem;
+}
+
+.galerie__fleche[aria-disabled="true"] {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.galerie__fleche[aria-disabled="true"]:hover {
+  background: transparent;
 }
 
 /* Survol ou clavier : on soulève un peu la pièce de la table */

@@ -118,11 +118,12 @@
         <div class="partie__grille">
           <h2 class="partie__titre" id="titre-galerie">Nos pièces</h2>
           <div class="partie__corps">
-            <p class="partie__intro">Quelques pièces peintes par les membres, photographiées lors de nos expositions. Touchez ou cliquez sur une photo pour la voir en grand.</p>
+            <p class="partie__intro">Quelques pièces peintes par les membres, photographiées lors de nos expositions. Faites glisser la rangée pour les voir toutes, puis touchez ou cliquez sur une photo pour la voir en grand.</p>
           </div>
         </div>
 
-        <div class="galerie">
+        <!-- La rangée de pièces : elle défile de côté (doigt, souris, clavier ou boutons dessous) -->
+        <div class="galerie" id="galerie-rangee" role="region" aria-label="Nos pièces, à faire défiler" tabindex="0">
           <figure class="galerie__item">
             <a class="galerie__lien" href="./images/galerie/assiette-iris.jpg">
               <img src="./images/galerie/assiette-iris.jpg" width="1050" height="1400" loading="lazy"
@@ -250,6 +251,12 @@
             </a>
             <figcaption>Assiette à l’oiseau d’eau</figcaption>
           </figure>
+        </div>
+
+        <!-- Boutons pour faire défiler la rangée (affichés seulement avec JavaScript) -->
+        <div class="galerie__commandes">
+          <button class="bouton galerie__fleche" type="button" data-sens="-1" aria-controls="galerie-rangee" aria-label="Pièces précédentes"><span aria-hidden="true">←</span> Précédentes</button>
+          <button class="bouton galerie__fleche" type="button" data-sens="1" aria-controls="galerie-rangee" aria-label="Pièces suivantes">Suivantes <span aria-hidden="true">→</span></button>
         </div>
       </div>
     </section>

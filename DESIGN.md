@@ -167,7 +167,7 @@ Sur ordinateur (dès 960 px), chaque partie suit une grille de 12 colonnes : tit
 
 L'accueil : nom à gauche, texte d'entrée à droite (dès 1024 px), puis trois pièces de hauteurs différentes (100 %, 77 %, 58 %) debout sur une même ligne de base. La nappe rose poudré part du tiers bas de la grande pièce et court d'un bord à l'autre de l'écran jusqu'à « L'atelier ». Cartel à droite de chaque pièce dès 1200 px, dessous entre 768 et 1200 px ; sur téléphone, grande pièce à gauche et deux pièces empilées à droite.
 
-La galerie : 2 colonnes sur téléphone, 3 dès 768 px, 4 dès 1152 px. Les photos gardent leurs proportions (rien n'est rogné), alignées par le bas ; une pièce seule en fin de rangée se centre.
+La galerie : une seule rangée qui défile de côté (au doigt, à la souris, au clavier, ou avec les boutons « Précédentes » et « Suivantes » dessous), qui va jusqu'au bord de l'écran, la première pièce alignée sur le titre. Toutes les photos sont debout sur une même ligne, dans une hauteur commune (240 à 384 px) ; elles gardent leurs proportions (rien n'est rogné), et une photo en largeur ne dépasse pas 78 % de l'écran.
 
 ## Elevation & Depth
 
@@ -197,6 +197,7 @@ Coins doux sur tout ce qui est posé : photos (14 px ; 12 px dans la galerie), c
 - Cartel : le nom de la pièce en Newsreader 500, puis une ligne d'explication en texte petit brun doux.
 
 ### Galerie et visionneuse (signature)
+- La rangée s'arrête sur une pièce (accroche au début de chaque pièce). Les boutons de défilement sont en contour ; au début ou à la fin de la rangée, le bouton inutile pâlit. Sans JavaScript, les boutons disparaissent et la rangée défile quand même.
 - Au survol ou au focus, la pièce se soulève (6 px, ombre plus profonde, 360 ms, courbe douce).
 - Un clic l'ouvre en grand sur fond lin, voile brun derrière, avec son nom, un compteur et des boutons en contour. Ouverture douce de 280 ms, coupée si l'on préfère moins d'animations.
 

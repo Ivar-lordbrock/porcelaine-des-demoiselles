@@ -13,10 +13,10 @@ porcelaine-des-demoiselles/
 │   ├── base.css            couleurs, polices, tailles, boutons, liens
 │   ├── layout.css          l’en-tête, le menu, les parties (fonds de couleur), le pied de page
 │   ├── sections.css        le style de chaque partie (accueil, atelier, rendez-vous…)
-│   └── galerie.css         la grille de photos et la visionneuse
+│   └── galerie.css         la rangée de photos qui défile et la visionneuse
 ├── js/
 │   ├── menu.js             le bouton « Menu » sur téléphone (rien à y toucher)
-│   └── galerie.js          agrandit une photo au clic (rien à y toucher)
+│   └── galerie.js          fait défiler la rangée et agrandit une photo au clic (rien à y toucher)
 ├── fonts/                  les deux polices, hébergées sur le site
 ├── images/
 │   ├── site/               l’icône d’onglet (favicon.svg)
